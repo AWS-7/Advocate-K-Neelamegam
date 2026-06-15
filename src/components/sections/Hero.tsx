@@ -88,21 +88,21 @@ export function Hero() {
             &ldquo;{siteConfig.heroMotto}&rdquo;
           </p>
 
-          <div className="mt-6 flex w-full flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
+          <div className="mt-6 flex flex-row flex-wrap items-center justify-center gap-2.5 lg:justify-start">
             <button
               type="button"
               onClick={() => scrollToSection("about")}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-navy transition-colors hover:bg-gold-light sm:w-auto sm:text-[15px]"
+              className="inline-flex w-auto items-center justify-center gap-1.5 rounded-full bg-gold px-4 py-2 text-xs font-bold text-navy transition-colors hover:bg-gold-light sm:px-5 sm:py-2.5 sm:text-sm"
             >
-              <User className="h-4 w-4" aria-hidden="true" />
+              <User className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
               About Us
             </button>
             <button
               type="button"
               onClick={() => scrollToSection("contact")}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/10 sm:w-auto sm:text-[15px]"
+              className="inline-flex w-auto items-center justify-center gap-1.5 rounded-full border border-white/25 bg-white/5 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/10 sm:px-5 sm:py-2.5 sm:text-sm"
             >
-              <MapPin className="h-4 w-4" aria-hidden="true" />
+              <MapPin className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
               View Location
             </button>
           </div>

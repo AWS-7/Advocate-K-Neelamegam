@@ -64,9 +64,28 @@ h4 {
   animation-play-state: paused;
 }
 
+@keyframes preloader-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.preloader-bar {
+  width: 50%;
+  animation: preloader-bar 1.1s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .gallery-marquee-track,
   .hero-tags-marquee-track {
     animation: none;
+  }
+
+  .preloader-bar {
+    animation: none;
+    width: 100%;
   }
 }

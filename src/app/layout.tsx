@@ -1,6 +1,7 @@
 import type { Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
+import { Preloader } from "@/components/layout/Preloader";
 import { buildSiteMetadata } from "@/lib/seo";
 import "./globals.css";
 
@@ -42,6 +43,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <SeoJsonLd />
+        <Preloader />
         {children}
       </body>
     </html>
