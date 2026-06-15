@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" fill="none">
+  <rect width="800" height="1000" fill="#0B1D3A"/>
+  <rect x="40" y="40" width="720" height="920" rx="16" stroke="#C9A227" stroke-width="2" fill="#061224"/>
+  <circle cx="400" cy="320" r="120" fill="#1a2d4a"/>
+  <rect x="280" y="480" width="240" height="320" rx="120" fill="#1a2d4a"/>
+  <text x="400" y="900" text-anchor="middle" fill="#C9A227" font-family="Georgia, serif" font-size="28" font-weight="bold">Advocate Portrait</text>
+  <text x="400" y="940" text-anchor="middle" fill="#5C6778" font-family="Arial, sans-serif" font-size="18">Replace with advocate-portrait.jpg</text>
+</svg>
