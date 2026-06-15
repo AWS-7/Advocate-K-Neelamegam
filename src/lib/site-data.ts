@@ -38,6 +38,25 @@ export const siteConfig = {
     "https://www.google.com/maps/dir/?api=1&destination=9.9535339,78.1863904",
   whatsappMessage:
     "Hello Advocate K. Neelamegam, I would like to schedule a legal consultation regarding my case.",
+  whatsappMessages: {
+    default:
+      "Hello Advocate K. Neelamegam, I would like to schedule a legal consultation regarding my case.",
+    consultation:
+      "Hello, I would like to request a free legal consultation at Lumbini Law Associates. Please let me know your available time.",
+    appointment:
+      "Hello Advocate K. Neelamegam, I would like to book an appointment.\n\nName: {name}\nPhone: {phone}\nDate: {date}\nTime: {time}\nCase Type: {caseType}\n\nPlease confirm my slot. Thank you.",
+    criminal:
+      "Hello, I need legal assistance for a criminal matter. Please guide me on the next steps.",
+    civil: "Hello, I have a civil litigation matter and need legal advice.",
+    family: "Hello, I need confidential consultation for a family law matter.",
+    property: "Hello, I need legal help regarding a property dispute.",
+    niAct: "Hello, I need assistance with a cheque bounce (NI Act) case.",
+    highCourt: "Hello, I need representation for a High Court matter at Madurai Bench.",
+    floatingButton:
+      "Hello Advocate K. Neelamegam, I visited your website and would like to speak with you regarding my legal matter.",
+    autoReplyNote:
+      "Thank you for contacting Lumbini Law Associates. We have received your message and will respond shortly. For urgent matters, please call 080720 21876.",
+  },
   heroMotto: "Justice, Integrity & Trusted Legal Advocacy",
   locationLabel: "Madurai, Tamil Nadu",
   seo: {
@@ -149,6 +168,95 @@ export const faqItems = [
   },
 ] as const;
 
+export const appointmentSlots = [
+  "09:00 AM",
+  "10:00 AM",
+  "11:00 AM",
+  "12:00 PM",
+  "02:00 PM",
+  "03:00 PM",
+  "04:00 PM",
+  "05:00 PM",
+] as const;
+
+export const caseStudyTypes = [
+  "Criminal",
+  "Civil",
+  "Family",
+  "Property",
+  "NI Act",
+  "High Court",
+] as const;
+
+export const caseStudies = [
+  {
+    id: "cs-01",
+    type: "Criminal" as const,
+    title: "Anticipatory Bail in Economic Offence Matter",
+    challenge:
+      "Client faced imminent arrest following an FIR related to a commercial transaction dispute reclassified as criminal.",
+    approach:
+      "Filed anticipatory bail with detailed documentary evidence establishing civil nature of dispute and cooperation with investigation.",
+    outcome: "Anticipatory bail granted with favourable conditions; client protected from custody.",
+    duration: "3 weeks",
+  },
+  {
+    id: "cs-02",
+    type: "Property" as const,
+    title: "Ancestral Land Partition Dispute",
+    challenge:
+      "Multi-party family dispute over ancestral agricultural land with conflicting title documents.",
+    approach:
+      "Comprehensive title verification, partition suit preparation, and strategic mediation alongside court proceedings.",
+    outcome: "Amicable partition decree with clear boundary demarcation for all parties.",
+    duration: "14 months",
+  },
+  {
+    id: "cs-03",
+    type: "NI Act" as const,
+    title: "Cheque Bounce Recovery — Commercial Debt",
+    challenge:
+      "Business creditor with dishonoured cheque exceeding ₹8 lakhs; drawer evading payment.",
+    approach:
+      "Statutory legal notice, NI Act complaint, and parallel negotiation for settlement.",
+    outcome: "Full settlement recovered through court-supervised compromise.",
+    duration: "8 months",
+  },
+  {
+    id: "cs-04",
+    type: "Family" as const,
+    title: "Child Custody & Maintenance Proceedings",
+    challenge:
+      "Contested matrimonial dispute involving minor child welfare and interim maintenance.",
+    approach:
+      "Child-centric arguments, school and welfare records, and interim application for maintenance.",
+    outcome: "Favourable custody arrangement and interim maintenance order for client.",
+    duration: "6 months",
+  },
+  {
+    id: "cs-05",
+    type: "High Court" as const,
+    title: "Writ Petition — Administrative Action",
+    challenge:
+      "Government order adversely affecting client's licensed business operations without adequate hearing.",
+    approach:
+      "Writ petition before Madurai Bench citing principles of natural justice and procedural irregularity.",
+    outcome: "Stay of impugned order; matter remanded for fresh consideration with notice.",
+    duration: "2 months",
+  },
+  {
+    id: "cs-06",
+    type: "Civil" as const,
+    title: "Contract Breach & Recovery Suit",
+    challenge:
+      "Supplier failed to deliver goods after advance payment; no written contract but strong documentary trail.",
+    approach:
+      "Recovery suit with email, payment, and witness evidence; application for attachment before judgment.",
+    outcome: "Decree for principal amount with interest; defendant complied via settlement.",
+    duration: "11 months",
+  },
+] as const;
+
 export const heroFeatureTags = [
   { icon: "scale", text: "High Court Matters" },
   { icon: "gavel", text: "Criminal & Civil" },
@@ -161,14 +269,16 @@ export const heroFeatureTags = [
 ] as const;
 
 export const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/#about" },
-  { label: "Practice Areas", href: "/#practice-areas", hasDropdown: true },
-  { label: "Case Studies", href: "/#case-studies" },
-  { label: "Blog", href: "/blog" },
-  { label: "Reviews", href: "/#reviews" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Contact Us", href: "/#contact" },
+  { label: "Home", href: "#home" },
+  { label: "About Us", href: "#about" },
+  { label: "Practice Areas", href: "#practice-areas", hasDropdown: true },
+  { label: "Why Choose Us", href: "#why-choose-us" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Case Studies", href: "#case-studies" },
+  { label: "Blog", href: "/blog", isPage: true },
+  { label: "Reviews", href: "#reviews" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Contact Us", href: "#contact" },
 ] as const;
 
 export const heroCarouselSlides = [
@@ -227,46 +337,52 @@ export const galleryImages = [
 
 export const practiceAreas = [
   {
-    title: "Criminal Cases",
     slug: "criminal-cases",
+    title: "Criminal Cases",
     description:
       "Strong defense representation for bail, trials, appeals, and regulatory offences before district and High Court.",
     icon: "gavel",
+    whatsappKey: "criminal",
   },
   {
-    title: "Civil Cases",
     slug: "civil-cases",
+    title: "Civil Cases",
     description:
       "Expert litigation for contractual disputes, recovery suits, and civil rights matters with strategic courtroom advocacy.",
     icon: "scale",
+    whatsappKey: "civil",
   },
   {
-    title: "Family Law",
     slug: "family-law",
+    title: "Family Law",
     description:
       "Sensitive handling of divorce, maintenance, custody, and matrimonial disputes with confidentiality and care.",
     icon: "users",
+    whatsappKey: "family",
   },
   {
-    title: "Property Disputes",
     slug: "property-disputes",
+    title: "Property Disputes",
     description:
       "Resolution of land, title, partition, and real estate conflicts through negotiation and decisive legal action.",
     icon: "building",
+    whatsappKey: "property",
   },
   {
+    slug: "cheque-bounce-ni-act",
     title: "Cheque Bounce (NI Act)",
-    slug: "ni-act",
     description:
       "Swift action under the Negotiable Instruments Act for dishonoured cheques and financial recovery.",
     icon: "fileWarning",
+    whatsappKey: "niAct",
   },
   {
+    slug: "high-court-matters",
     title: "High Court Matters",
-    slug: "high-court",
     description:
       "Representation before the Madurai Bench of Madras High Court for writs, appeals, and constitutional issues.",
     icon: "landmark",
+    whatsappKey: "highCourt",
   },
 ] as const;
 
@@ -319,10 +435,37 @@ export const testimonials = [
   },
 ] as const;
 
-export const footerPracticeAreas = practiceAreas.map((area) => ({
-  title: area.title,
-  href: `/#practice-${area.slug}`,
-}));
+export const footerPracticeAreas = practiceAreas.map((area) => area.title);
 
-export { getWhatsAppUrl } from "@/lib/whatsapp";
-export type { AppointmentDetails, WhatsAppTemplateKey } from "@/lib/whatsapp";
+export function getWhatsAppUrl(messageOrKey?: string): string {
+  const messages = siteConfig.whatsappMessages;
+  const isKey =
+    messageOrKey &&
+    messageOrKey in messages &&
+    messageOrKey !== "autoReplyNote";
+  const text = isKey
+    ? messages[messageOrKey as keyof typeof messages]
+    : messageOrKey ?? messages.default;
+  return `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(text)}`;
+}
+
+export function buildAppointmentWhatsApp(data: {
+  name: string;
+  phone: string;
+  date: string;
+  time: string;
+  caseType: string;
+}) {
+  let message = siteConfig.whatsappMessages.appointment;
+  message = message
+    .replace("{name}", data.name)
+    .replace("{phone}", data.phone)
+    .replace("{date}", data.date)
+    .replace("{time}", data.time)
+    .replace("{caseType}", data.caseType);
+  return `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
+}
+
+export function getPracticeAreaHref(slug: string) {
+  return `/#area-${slug}`;
+}

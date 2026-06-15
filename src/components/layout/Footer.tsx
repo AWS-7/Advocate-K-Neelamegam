@@ -1,17 +1,10 @@
 import { Scale, Phone, Mail, MapPin } from "lucide-react";
-import Link from "next/link";
 import {
-  footerPracticeAreas,
   navLinks,
+  practiceAreas,
   siteConfig,
   getWhatsAppUrl,
 } from "@/lib/site-data";
-
-const legalLinks = [
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Blog", href: "/blog" },
-  { label: "Book Appointment", href: "/#appointment" },
-];
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -44,22 +37,12 @@ export function Footer() {
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
+                  <a
                     href={link.href}
                     className="text-sm text-white/70 transition-colors hover:text-gold"
                   >
                     {link.label}
-                  </Link>
-                </li>
-              ))}
-              {legalLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/70 transition-colors hover:text-gold"
-                  >
-                    {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -70,14 +53,14 @@ export function Footer() {
               Practice Areas
             </h3>
             <ul className="space-y-2">
-              {footerPracticeAreas.map((area) => (
-                <li key={area.title}>
-                  <Link
-                    href={area.href}
+              {practiceAreas.map((area) => (
+                <li key={area.slug}>
+                  <a
+                    href={`/#area-${area.slug}`}
                     className="text-sm text-white/70 transition-colors hover:text-gold"
                   >
                     {area.title}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -99,7 +82,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href={getWhatsAppUrl("default")}
+                  href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-2 transition-colors hover:text-gold"
@@ -133,9 +116,9 @@ export function Footer() {
             reserved.
           </p>
           <p className="mt-2">
-            <Link href="/privacy-policy" className="text-white/60 hover:text-gold">
+            <a href="/privacy-policy" className="text-white/60 transition-colors hover:text-gold">
               Privacy Policy
-            </Link>
+            </a>
           </p>
           <p className="mt-2">
             Developed By{" "}

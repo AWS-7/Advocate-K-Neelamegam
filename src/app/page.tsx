@@ -6,12 +6,11 @@ import { Hero } from "@/components/sections/Hero";
 import { PracticeAreas } from "@/components/sections/PracticeAreas";
 import { AboutAdvocate } from "@/components/sections/AboutAdvocate";
 import { Gallery } from "@/components/sections/Gallery";
-import { Stats } from "@/components/sections/Stats";
 import { CaseStudies } from "@/components/sections/CaseStudies";
+import { Stats } from "@/components/sections/Stats";
 import { Reviews } from "@/components/sections/Reviews";
 import { BlogPreview } from "@/components/sections/BlogPreview";
 import { Faq } from "@/components/sections/Faq";
-import { AppointmentBooking } from "@/components/sections/AppointmentBooking";
 import { Contact } from "@/components/sections/Contact";
 import { homePageMetadata } from "@/lib/seo";
 
@@ -26,12 +25,11 @@ export default function HomePage() {
         <PracticeAreas />
         <AboutAdvocate />
         <Gallery />
-        <Stats />
         <CaseStudies />
+        <Stats />
         <Reviews />
         <BlogPreview />
         <Faq />
-        <AppointmentBooking />
         <Contact />
       </main>
       <Footer />
