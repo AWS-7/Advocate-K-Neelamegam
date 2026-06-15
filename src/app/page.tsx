@@ -6,7 +6,6 @@ import { Hero } from "@/components/sections/Hero";
 import { PracticeAreas } from "@/components/sections/PracticeAreas";
 import { AboutAdvocate } from "@/components/sections/AboutAdvocate";
 import { Gallery } from "@/components/sections/Gallery";
-import { CaseStudies } from "@/components/sections/CaseStudies";
 import { Stats } from "@/components/sections/Stats";
 import { Reviews } from "@/components/sections/Reviews";
 import { BlogPreview } from "@/components/sections/BlogPreview";
@@ -25,7 +24,6 @@ export default function HomePage() {
         <PracticeAreas />
         <AboutAdvocate />
         <Gallery />
-        <CaseStudies />
         <Stats />
         <Reviews />
         <BlogPreview />

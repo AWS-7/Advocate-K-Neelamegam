@@ -179,84 +179,6 @@ export const appointmentSlots = [
   "05:00 PM",
 ] as const;
 
-export const caseStudyTypes = [
-  "Criminal",
-  "Civil",
-  "Family",
-  "Property",
-  "NI Act",
-  "High Court",
-] as const;
-
-export const caseStudies = [
-  {
-    id: "cs-01",
-    type: "Criminal" as const,
-    title: "Anticipatory Bail in Economic Offence Matter",
-    challenge:
-      "Client faced imminent arrest following an FIR related to a commercial transaction dispute reclassified as criminal.",
-    approach:
-      "Filed anticipatory bail with detailed documentary evidence establishing civil nature of dispute and cooperation with investigation.",
-    outcome: "Anticipatory bail granted with favourable conditions; client protected from custody.",
-    duration: "3 weeks",
-  },
-  {
-    id: "cs-02",
-    type: "Property" as const,
-    title: "Ancestral Land Partition Dispute",
-    challenge:
-      "Multi-party family dispute over ancestral agricultural land with conflicting title documents.",
-    approach:
-      "Comprehensive title verification, partition suit preparation, and strategic mediation alongside court proceedings.",
-    outcome: "Amicable partition decree with clear boundary demarcation for all parties.",
-    duration: "14 months",
-  },
-  {
-    id: "cs-03",
-    type: "NI Act" as const,
-    title: "Cheque Bounce Recovery — Commercial Debt",
-    challenge:
-      "Business creditor with dishonoured cheque exceeding ₹8 lakhs; drawer evading payment.",
-    approach:
-      "Statutory legal notice, NI Act complaint, and parallel negotiation for settlement.",
-    outcome: "Full settlement recovered through court-supervised compromise.",
-    duration: "8 months",
-  },
-  {
-    id: "cs-04",
-    type: "Family" as const,
-    title: "Child Custody & Maintenance Proceedings",
-    challenge:
-      "Contested matrimonial dispute involving minor child welfare and interim maintenance.",
-    approach:
-      "Child-centric arguments, school and welfare records, and interim application for maintenance.",
-    outcome: "Favourable custody arrangement and interim maintenance order for client.",
-    duration: "6 months",
-  },
-  {
-    id: "cs-05",
-    type: "High Court" as const,
-    title: "Writ Petition — Administrative Action",
-    challenge:
-      "Government order adversely affecting client's licensed business operations without adequate hearing.",
-    approach:
-      "Writ petition before Madurai Bench citing principles of natural justice and procedural irregularity.",
-    outcome: "Stay of impugned order; matter remanded for fresh consideration with notice.",
-    duration: "2 months",
-  },
-  {
-    id: "cs-06",
-    type: "Civil" as const,
-    title: "Contract Breach & Recovery Suit",
-    challenge:
-      "Supplier failed to deliver goods after advance payment; no written contract but strong documentary trail.",
-    approach:
-      "Recovery suit with email, payment, and witness evidence; application for attachment before judgment.",
-    outcome: "Decree for principal amount with interest; defendant complied via settlement.",
-    duration: "11 months",
-  },
-] as const;
-
 export const heroFeatureTags = [
   { icon: "scale", text: "High Court Matters" },
   { icon: "gavel", text: "Criminal & Civil" },
@@ -274,7 +196,6 @@ export const navLinks = [
   { label: "Practice Areas", href: "#practice-areas", hasDropdown: true },
   { label: "Why Choose Us", href: "#why-choose-us" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Case Studies", href: "#case-studies" },
   { label: "Blog", href: "/blog", isPage: true },
   { label: "Reviews", href: "#reviews" },
   { label: "FAQ", href: "#faq" },
