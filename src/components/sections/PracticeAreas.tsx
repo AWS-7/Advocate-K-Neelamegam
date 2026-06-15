@@ -101,6 +101,7 @@ export function PracticeAreas() {
               return (
                 <motion.article
                   key={area.title}
+                  id={`practice-${area.slug}`}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true, margin: "-40px" }}

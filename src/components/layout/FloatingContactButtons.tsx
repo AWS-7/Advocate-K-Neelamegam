@@ -25,7 +25,7 @@ export function FloatingContactButtons() {
         <Phone className="h-5 w-5" aria-hidden="true" />
       </a>
       <a
-        href={getWhatsAppUrl()}
+        href={getWhatsAppUrl("default")}
         target="_blank"
         rel="noopener noreferrer"
         className="flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_4px_20px_rgba(0,0,0,0.25)] transition-transform hover:scale-105 hover:bg-[#20bd5a] sm:h-14 sm:w-14"

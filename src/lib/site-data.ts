@@ -161,14 +161,14 @@ export const heroFeatureTags = [
 ] as const;
 
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Practice Areas", href: "#practice-areas", hasDropdown: true },
-  { label: "Why Choose Us", href: "#why-choose-us" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/#about" },
+  { label: "Practice Areas", href: "/#practice-areas", hasDropdown: true },
+  { label: "Case Studies", href: "/#case-studies" },
+  { label: "Blog", href: "/blog" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact Us", href: "/#contact" },
 ] as const;
 
 export const heroCarouselSlides = [
@@ -228,36 +228,42 @@ export const galleryImages = [
 export const practiceAreas = [
   {
     title: "Criminal Cases",
+    slug: "criminal-cases",
     description:
       "Strong defense representation for bail, trials, appeals, and regulatory offences before district and High Court.",
     icon: "gavel",
   },
   {
     title: "Civil Cases",
+    slug: "civil-cases",
     description:
       "Expert litigation for contractual disputes, recovery suits, and civil rights matters with strategic courtroom advocacy.",
     icon: "scale",
   },
   {
     title: "Family Law",
+    slug: "family-law",
     description:
       "Sensitive handling of divorce, maintenance, custody, and matrimonial disputes with confidentiality and care.",
     icon: "users",
   },
   {
     title: "Property Disputes",
+    slug: "property-disputes",
     description:
       "Resolution of land, title, partition, and real estate conflicts through negotiation and decisive legal action.",
     icon: "building",
   },
   {
     title: "Cheque Bounce (NI Act)",
+    slug: "ni-act",
     description:
       "Swift action under the Negotiable Instruments Act for dishonoured cheques and financial recovery.",
     icon: "fileWarning",
   },
   {
     title: "High Court Matters",
+    slug: "high-court",
     description:
       "Representation before the Madurai Bench of Madras High Court for writs, appeals, and constitutional issues.",
     icon: "landmark",
@@ -313,9 +319,10 @@ export const testimonials = [
   },
 ] as const;
 
-export const footerPracticeAreas = practiceAreas.map((area) => area.title);
+export const footerPracticeAreas = practiceAreas.map((area) => ({
+  title: area.title,
+  href: `/#practice-${area.slug}`,
+}));
 
-export function getWhatsAppUrl(message?: string) {
-  const text = encodeURIComponent(message ?? siteConfig.whatsappMessage);
-  return `https://wa.me/${siteConfig.whatsapp}?text=${text}`;
-}
+export { getWhatsAppUrl } from "@/lib/whatsapp";
+export type { AppointmentDetails, WhatsAppTemplateKey } from "@/lib/whatsapp";

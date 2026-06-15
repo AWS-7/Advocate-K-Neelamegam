@@ -5,8 +5,9 @@ import { Scale } from "lucide-react";
 import { siteConfig } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
-const MIN_DISPLAY_MS = 1000;
-const FADE_MS = 450;
+const MIN_DISPLAY_MS = 1600;
+const FADE_MS = 500;
+const MAX_WAIT_MS = 4000;
 
 export function Preloader() {
   const [visible, setVisible] = useState(true);
@@ -14,21 +15,48 @@ export function Preloader() {
 
   useEffect(() => {
     const start = Date.now();
+    let done = false;
+    let fadeTimer: ReturnType<typeof setTimeout> | undefined;
+    let hideTimer: ReturnType<typeof setTimeout> | undefined;
 
-    const finish = () => {
-      const wait = Math.max(0, MIN_DISPLAY_MS - (Date.now() - start));
-      window.setTimeout(() => {
+    const hide = () => {
+      if (done) return;
+      done = true;
+
+      const elapsed = Date.now() - start;
+      const remaining = Math.max(0, MIN_DISPLAY_MS - elapsed);
+
+      fadeTimer = setTimeout(() => {
         setFadeOut(true);
-        window.setTimeout(() => setVisible(false), FADE_MS);
-      }, wait);
+        document.body.classList.remove("preloader-active");
+        document.body.style.overflow = "";
+        document.getElementById("site-preloader-static")?.remove();
+
+        hideTimer = setTimeout(() => setVisible(false), FADE_MS);
+      }, remaining);
     };
 
+    document.body.classList.add("preloader-active");
+    document.body.style.overflow = "hidden";
+
+    const maxTimer = setTimeout(hide, MAX_WAIT_MS);
+
     if (document.readyState === "complete") {
-      finish();
+      hide();
     } else {
-      window.addEventListener("load", finish, { once: true });
-      return () => window.removeEventListener("load", finish);
+      window.addEventListener("load", hide, { once: true });
+      document.addEventListener("DOMContentLoaded", hide, { once: true });
     }
+
+    return () => {
+      clearTimeout(maxTimer);
+      clearTimeout(fadeTimer);
+      clearTimeout(hideTimer);
+      window.removeEventListener("load", hide);
+      document.removeEventListener("DOMContentLoaded", hide);
+      document.body.classList.remove("preloader-active");
+      document.body.style.overflow = "";
+    };
   }, []);
 
   if (!visible) return null;
@@ -36,7 +64,7 @@ export function Preloader() {
   return (
     <div
       className={cn(
-        "fixed inset-0 z-[100] flex flex-col items-center justify-center bg-navy-dark transition-opacity duration-[450ms] ease-out",
+        "fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#061224] transition-opacity duration-500 ease-out",
         fadeOut ? "pointer-events-none opacity-0" : "opacity-100",
       )}
       role="status"

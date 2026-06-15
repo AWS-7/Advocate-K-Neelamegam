@@ -1,14 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Scale, ChevronDown, MessageCircle } from "lucide-react";
-import { navLinks, siteConfig } from "@/lib/site-data";
-import { cn, scrollToSection } from "@/lib/utils";
+import { navLinks, practiceAreas, siteConfig } from "@/lib/site-data";
+import { cn, navigateTo } from "@/lib/utils";
 
 export function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [practiceOpen, setPracticeOpen] = useState(false);
+  const [mobilePracticeOpen, setMobilePracticeOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -24,11 +30,45 @@ export function Header() {
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setPracticeOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const handleNavClick = (href: string) => {
-    const id = href.replace("#", "");
-    setActiveSection(id);
-    scrollToSection(id);
+    if (href === "/") {
+      if (pathname === "/") {
+        navigateTo("/#home");
+        setActiveSection("home");
+      } else {
+        window.location.href = "/";
+      }
+    } else {
+      navigateTo(href);
+      if (href.startsWith("/#")) {
+        setActiveSection(href.replace("/#", ""));
+      }
+    }
     setMobileOpen(false);
+    setPracticeOpen(false);
+    setMobilePracticeOpen(false);
+  };
+
+  const handlePracticeAreaClick = (slug: string) => {
+    handleNavClick(`/#practice-${slug}`);
+  };
+
+  const isLinkActive = (href: string) => {
+    if (href === "/blog") return pathname.startsWith("/blog");
+    if (href === "/privacy-policy") return pathname === "/privacy-policy";
+    if (href === "/") return pathname === "/" && activeSection === "home";
+    if (href.startsWith("/#")) return pathname === "/" && activeSection === href.replace("/#", "");
+    return false;
   };
 
   return (
@@ -40,11 +80,11 @@ export function Header() {
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 lg:px-8 lg:py-4">
-          <a
-            href="#home"
+          <Link
+            href="/"
             onClick={(e) => {
               e.preventDefault();
-              handleNavClick("#home");
+              handleNavClick("/");
             }}
             className="flex shrink-0 items-center gap-3"
             aria-label={`${siteConfig.name} - Home`}
@@ -58,14 +98,68 @@ export function Header() {
                 LAW ASSOCIATES
               </p>
             </div>
-          </a>
+          </Link>
 
           <nav
-            className="hidden flex-1 items-center justify-center gap-7 xl:gap-9 lg:flex"
+            className="hidden flex-1 items-center justify-center gap-5 xl:gap-7 lg:flex"
             aria-label="Main navigation"
           >
             {navLinks.map((link) => {
-              const isActive = activeSection === link.href.replace("#", "");
+              const isActive = isLinkActive(link.href);
+
+              if ("hasDropdown" in link && link.hasDropdown) {
+                return (
+                  <div key={link.href} ref={dropdownRef} className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setPracticeOpen(!practiceOpen)}
+                      onMouseEnter={() => setPracticeOpen(true)}
+                      className={cn(
+                        "relative inline-flex items-center gap-1 pb-1 text-[15px] font-medium transition-colors",
+                        isActive || practiceOpen ? "text-gold" : "text-navy/75 hover:text-navy",
+                      )}
+                      aria-expanded={practiceOpen}
+                      aria-haspopup="true"
+                    >
+                      {link.label}
+                      <ChevronDown
+                        className={cn(
+                          "h-3.5 w-3.5 opacity-70 transition-transform",
+                          practiceOpen && "rotate-180",
+                        )}
+                        aria-hidden="true"
+                      />
+                    </button>
+
+                    {practiceOpen && (
+                      <div
+                        className="absolute left-1/2 top-full z-50 mt-2 w-64 -translate-x-1/2 rounded-xl border border-navy/10 bg-white py-2 shadow-xl"
+                        onMouseLeave={() => setPracticeOpen(false)}
+                      >
+                        {practiceAreas.map((area) => (
+                          <button
+                            key={area.slug}
+                            type="button"
+                            onClick={() => handlePracticeAreaClick(area.slug)}
+                            className="block w-full px-4 py-2.5 text-left text-sm text-navy/85 transition-colors hover:bg-gold/10 hover:text-gold"
+                          >
+                            {area.title}
+                          </button>
+                        ))}
+                        <div className="my-1 border-t border-navy/5" />
+                        <button
+                          type="button"
+                          onClick={() => handleNavClick("/#practice-areas")}
+                          className="block w-full px-4 py-2.5 text-left text-sm font-semibold text-gold hover:bg-gold/5"
+                        >
+                          View All Practice Areas
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
               return (
                 <a
                   key={link.href}
@@ -76,17 +170,10 @@ export function Header() {
                   }}
                   className={cn(
                     "relative pb-1 text-[15px] font-medium transition-colors",
-                    isActive
-                      ? "text-gold"
-                      : "text-navy/75 hover:text-navy",
+                    isActive ? "text-gold" : "text-navy/75 hover:text-navy",
                   )}
                 >
-                  <span className="inline-flex items-center gap-1">
-                    {link.label}
-                    {"hasDropdown" in link && link.hasDropdown && (
-                      <ChevronDown className="h-3.5 w-3.5 opacity-70" aria-hidden="true" />
-                    )}
-                  </span>
+                  {link.label}
                   {isActive && (
                     <span
                       className="absolute inset-x-0 -bottom-0.5 mx-auto h-[2px] w-full bg-gold"
@@ -101,11 +188,11 @@ export function Header() {
           <div className="flex items-center gap-2">
             <button
               type="button"
-              onClick={() => handleNavClick("#contact")}
+              onClick={() => handleNavClick("/#appointment")}
               className="hidden items-center gap-2 rounded-md bg-gold px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#b8922a] md:inline-flex"
             >
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              Free Consultation
+              Book Appointment
             </button>
 
             <button
@@ -121,7 +208,6 @@ export function Header() {
         </div>
       </header>
 
-      {/* Mobile side drawer */}
       <div
         className={cn(
           "fixed inset-0 z-[60] lg:hidden",
@@ -167,7 +253,43 @@ export function Header() {
 
           <nav className="flex flex-1 flex-col overflow-y-auto px-4 py-4">
             {navLinks.map((link) => {
-              const isActive = activeSection === link.href.replace("#", "");
+              const isActive = isLinkActive(link.href);
+
+              if ("hasDropdown" in link && link.hasDropdown) {
+                return (
+                  <div key={link.href} className="border-b border-navy/5">
+                    <button
+                      type="button"
+                      onClick={() => setMobilePracticeOpen(!mobilePracticeOpen)}
+                      className="flex w-full items-center justify-between py-3.5 text-base font-medium text-navy/85"
+                      aria-expanded={mobilePracticeOpen}
+                    >
+                      {link.label}
+                      <ChevronDown
+                        className={cn(
+                          "h-4 w-4 text-gold transition-transform",
+                          mobilePracticeOpen && "rotate-180",
+                        )}
+                      />
+                    </button>
+                    {mobilePracticeOpen && (
+                      <div className="pb-3 pl-3">
+                        {practiceAreas.map((area) => (
+                          <button
+                            key={area.slug}
+                            type="button"
+                            onClick={() => handlePracticeAreaClick(area.slug)}
+                            className="block w-full py-2 text-left text-sm text-navy/70 hover:text-gold"
+                          >
+                            {area.title}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
               return (
                 <a
                   key={link.href}
@@ -190,11 +312,11 @@ export function Header() {
           <div className="border-t border-navy/10 p-4">
             <button
               type="button"
-              onClick={() => handleNavClick("#contact")}
+              onClick={() => handleNavClick("/#appointment")}
               className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-[#b8922a]"
             >
               <MessageCircle className="h-5 w-5" aria-hidden="true" />
-              Free Consultation
+              Book Appointment
             </button>
           </div>
         </aside>
