@@ -76,6 +76,10 @@ export function Hero() {
             </span>
           </h1>
 
+          <p className="mt-2 text-sm font-medium text-white/90 sm:text-base lg:text-lg">
+            {siteConfig.seo.heroSubtitle}
+          </p>
+
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/80 sm:mt-5 sm:text-base lg:mx-0 lg:max-w-lg lg:text-[17px]">
             {siteConfig.description}
           </p>

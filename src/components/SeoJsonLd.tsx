@@ -1,94 +1,181 @@
-import { SITE_URL, practiceAreas, siteConfig } from "@/lib/site-data";
+import {
+  SITE_URL,
+  faqItems,
+  practiceAreas,
+  siteConfig,
+  testimonials,
+} from "@/lib/site-data";
 
-export function LegalServiceJsonLd() {
+const businessId = `${SITE_URL}/#business`;
+const attorneyId = `${SITE_URL}/#attorney`;
+const websiteId = `${SITE_URL}/#website`;
+
+export function SeoJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LegalService",
-    name: siteConfig.name,
-    alternateName: siteConfig.advocateName,
-    url: SITE_URL,
-    logo: `${SITE_URL}/images/logo.png`,
-    image: `${SITE_URL}/images/advocate-portrait.jpg`,
-    description:
-      "Lumbini Law Associates — High Court Advocate at Madurai Bench offering criminal, civil, family, property, and NI Act legal services.",
-    telephone: siteConfig.phone,
-    email: siteConfig.email,
-    priceRange: "₹₹",
-    foundingDate: String(siteConfig.foundingYear),
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: siteConfig.address.line1,
-      addressLocality: siteConfig.address.city,
-      addressRegion: siteConfig.address.state,
-      postalCode: siteConfig.address.pincode,
-      addressCountry: "IN",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: siteConfig.geo.lat,
-      longitude: siteConfig.geo.lng,
-    },
-    areaServed: {
-      "@type": "City",
-      name: "Madurai",
-      containedInPlace: {
-        "@type": "State",
-        name: "Tamil Nadu",
-        containedInPlace: {
-          "@type": "Country",
-          name: "India",
-        },
-      },
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: siteConfig.rating.value,
-      reviewCount: siteConfig.rating.count,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      opens: "00:00",
-      closes: "23:59",
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: siteConfig.phone,
-      contactType: "customer service",
-      availableLanguage: ["Tamil", "English"],
-      areaServed: "IN",
-    },
-    employee: {
-      "@type": "Attorney",
-      name: siteConfig.advocateName,
-      jobTitle: siteConfig.tagline,
-      worksFor: {
+    "@graph": [
+      {
         "@type": "LegalService",
+        "@id": businessId,
         name: siteConfig.name,
-      },
-    },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Legal Practice Areas",
-      itemListElement: practiceAreas.map((area) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: area.title,
-          description: area.description,
+        alternateName: [
+          siteConfig.advocateName,
+          "Lumbini Law Associates Madurai",
+          "Advocate K Neelamegam Madurai",
+        ],
+        url: SITE_URL,
+        logo: `${SITE_URL}/images/logo.svg`,
+        image: [
+          `${SITE_URL}/images/advocate-cutout.png`,
+          `${SITE_URL}/images/og-image.svg`,
+        ],
+        description: siteConfig.seo.description,
+        telephone: siteConfig.phone,
+        email: siteConfig.email,
+        priceRange: "₹₹",
+        foundingDate: String(siteConfig.foundingYear),
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: siteConfig.address.line1,
+          addressLocality: siteConfig.address.city,
+          addressRegion: siteConfig.address.state,
+          postalCode: siteConfig.address.pincode,
+          addressCountry: "IN",
         },
-      })),
-    },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: siteConfig.geo.lat,
+          longitude: siteConfig.geo.lng,
+        },
+        hasMap: siteConfig.googleMapsUrl,
+        areaServed: [
+          { "@type": "Country", name: "India" },
+          { "@type": "State", name: "Tamil Nadu" },
+          { "@type": "City", name: "Madurai" },
+        ],
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: siteConfig.rating.value,
+          reviewCount: siteConfig.rating.count,
+          bestRating: 5,
+          worstRating: 1,
+        },
+        review: testimonials.map((t) => ({
+          "@type": "Review",
+          author: { "@type": "Person", name: t.name },
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: t.rating,
+            bestRating: 5,
+          },
+          reviewBody: t.text,
+        })),
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "00:00",
+          closes: "23:59",
+        },
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: siteConfig.phone,
+            contactType: "customer service",
+            availableLanguage: ["Tamil", "English"],
+            areaServed: "IN",
+          },
+          {
+            "@type": "ContactPoint",
+            contactType: "legal consultation",
+            url: SITE_URL,
+            availableLanguage: ["Tamil", "English"],
+          },
+        ],
+        sameAs: [siteConfig.googleMapsUrl, siteConfig.googleReviewsUrl],
+        employee: { "@id": attorneyId },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Legal Practice Areas — India",
+          itemListElement: practiceAreas.map((area) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: area.title,
+              description: area.description,
+              areaServed: "India",
+            },
+          })),
+        },
+      },
+      {
+        "@type": "Attorney",
+        "@id": attorneyId,
+        name: siteConfig.advocateName,
+        jobTitle: "High Court Advocate — Criminal, Civil & Family Law",
+        description:
+          "Experienced High Court advocate specializing in criminal defense, civil litigation, family law, property disputes, NI Act cases, and constitutional matters across Tamil Nadu and India.",
+        url: SITE_URL,
+        image: `${SITE_URL}/images/advocate-cutout.png`,
+        telephone: siteConfig.phone,
+        email: siteConfig.email,
+        worksFor: { "@id": businessId },
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: siteConfig.address.line1,
+          addressLocality: siteConfig.address.city,
+          addressRegion: siteConfig.address.state,
+          postalCode: siteConfig.address.pincode,
+          addressCountry: "IN",
+        },
+        knowsAbout: practiceAreas.map((a) => a.title),
+      },
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        name: siteConfig.name,
+        url: SITE_URL,
+        description: siteConfig.seo.description,
+        inLanguage: "en-IN",
+        publisher: { "@id": businessId },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/#faq`,
+        mainEntity: faqItems.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "High Court Advocate",
+            item: `${SITE_URL}/#about`,
+          },
+        ],
+      },
+    ],
   };
 
   return (
@@ -99,23 +186,8 @@ export function LegalServiceJsonLd() {
   );
 }
 
-export function WebsiteJsonLd() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: siteConfig.name,
-    url: SITE_URL,
-    description: siteConfig.description,
-    publisher: {
-      "@type": "LegalService",
-      name: siteConfig.name,
-    },
-  };
+/** @deprecated Use SeoJsonLd instead */
+export const LegalServiceJsonLd = SeoJsonLd;
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
-}
+/** @deprecated Use SeoJsonLd instead */
+export const WebsiteJsonLd = () => null;

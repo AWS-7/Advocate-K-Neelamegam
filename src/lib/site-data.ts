@@ -6,7 +6,7 @@ export const siteConfig = {
   advocateName: "Advocate K. Neelamegam",
   tagline: "High Court Advocate – Madurai Bench",
   description:
-    "Providing Trusted Legal Solutions with Professionalism, Integrity & Confidentiality.",
+    "Experienced High Court advocate specializing in criminal defense, civil litigation, family law, property disputes, NI Act cases, and constitutional matters — trusted legal solutions with integrity.",
   phone: "+91 80720 21876",
   phoneDisplay: "080720 21876",
   phoneHref: "tel:+918072021876",
@@ -40,7 +40,114 @@ export const siteConfig = {
     "Hello Advocate K. Neelamegam, I would like to schedule a legal consultation regarding my case.",
   heroMotto: "Justice, Integrity & Trusted Legal Advocacy",
   locationLabel: "Madurai, Tamil Nadu",
+  seo: {
+    title:
+      "Advocate K. Neelamegam | High Court Lawyer | Criminal, Civil & Family Law Advocate | Lumbini Law Associates",
+    description:
+      "Advocate K. Neelamegam — experienced High Court lawyer for criminal defense, civil litigation, family law, property disputes, NI Act & writ petitions. Lumbini Law Associates, Madras High Court Madurai Bench. 20+ years. 4.9★ rated. Call 080720 21876.",
+    heroSubtitle:
+      "High Court Advocate — Criminal, Civil, Family & Constitutional Law Specialist",
+    nationalHeadline:
+      "Expert Legal Representation Across Criminal, Civil, Family & High Court Matters",
+  },
+  developer: {
+    name: "AWS Agni Web Solution",
+    phone: "9080700642",
+    phoneHref: "tel:+919080700642",
+  },
 };
+
+export const seoKeywords = [
+  // High Court & National
+  "high court advocate",
+  "high court lawyer india",
+  "madras high court advocate",
+  "madras high court lawyer",
+  "constitutional lawyer india",
+  "writ petition lawyer",
+  "criminal defense lawyer",
+  "criminal lawyer india",
+  "civil litigation lawyer",
+  "civil lawyer tamil nadu",
+  "family court lawyer",
+  "divorce lawyer",
+  "family law advocate",
+  "property dispute lawyer",
+  "land dispute lawyer",
+  "cheque bounce lawyer",
+  "NI act lawyer india",
+  "bail lawyer",
+  "legal consultant india",
+  "law firm tamil nadu",
+  "experienced advocate india",
+  "best lawyer tamil nadu",
+  "court case lawyer",
+  "legal services india",
+  // Practice-specific
+  "criminal appeal lawyer",
+  "civil suit lawyer",
+  "matrimonial lawyer",
+  "maintenance case lawyer",
+  "custody case lawyer",
+  "real estate lawyer",
+  "financial litigation lawyer",
+  "regulatory offence lawyer",
+  "high court appeal lawyer",
+  // Brand & Attorney
+  "Advocate K Neelamegam",
+  "Advocate K. Neelamegam",
+  "Lumbini Law Associates",
+  "Lumbini Law Associates advocate",
+  // Local (secondary)
+  "madurai advocate",
+  "advocate in madurai",
+  "madurai high court advocate",
+  "lawyer madurai",
+  "chamber 43 madurai high court",
+] as const;
+
+export const faqItems = [
+  {
+    question: "What types of cases does Advocate K. Neelamegam handle?",
+    answer:
+      "Advocate K. Neelamegam at Lumbini Law Associates handles criminal defense, civil litigation, family law (divorce, custody, maintenance), property and land disputes, cheque bounce cases under the NI Act, High Court writs, appeals, and constitutional matters before the Madras High Court Madurai Bench and district courts.",
+  },
+  {
+    question: "Who is a trusted High Court advocate for criminal and civil cases?",
+    answer:
+      "Advocate K. Neelamegam is an experienced High Court lawyer with 20+ years of courtroom practice, specializing in criminal defense, civil suits, bail applications, appeals, and regulatory offences. Lumbini Law Associates is rated 4.9 stars with 91+ Google reviews.",
+  },
+  {
+    question: "How do I hire a lawyer for a family law or divorce case?",
+    answer:
+      "Contact Lumbini Law Associates for confidential family law consultation. Advocate K. Neelamegam handles divorce, maintenance, child custody, and matrimonial disputes with sensitivity, ethical practice, and strong courtroom advocacy.",
+  },
+  {
+    question: "Can Advocate K. Neelamegam help with cheque bounce (NI Act) cases?",
+    answer:
+      "Yes. Lumbini Law Associates provides swift legal action under the Negotiable Instruments Act for dishonoured cheques and financial recovery, with expertise in NI Act litigation and debt recovery proceedings.",
+  },
+  {
+    question: "Where is Lumbini Law Associates located?",
+    answer:
+      "Lumbini Law Associates is located at Chamber No. 43, Madurai High Court Buildings, Madurai, Tamil Nadu 625023 — practicing at the Madurai Bench of the Madras High Court.",
+  },
+  {
+    question: "How can I schedule a legal consultation?",
+    answer:
+      "Call +91 80720 21876, WhatsApp for instant consultation, or email blue1947law@gmail.com. The firm offers 24x7 availability for urgent criminal, civil, and High Court legal matters.",
+  },
+  {
+    question: "Does Lumbini Law Associates handle property and land dispute cases?",
+    answer:
+      "Yes. Advocate K. Neelamegam resolves property disputes including land title issues, partition suits, real estate conflicts, and ownership disputes through negotiation and decisive court action across Tamil Nadu.",
+  },
+  {
+    question: "Who is the best advocate in Madurai for High Court matters?",
+    answer:
+      "Advocate K. Neelamegam at Lumbini Law Associates, Chamber No. 43, Madurai High Court, is among the most trusted advocates in Madurai for High Court writs, criminal appeals, civil litigation, and constitutional cases.",
+  },
+] as const;
 
 export const heroFeatureTags = [
   { icon: "scale", text: "High Court Matters" },
@@ -60,13 +167,14 @@ export const navLinks = [
   { label: "Why Choose Us", href: "#why-choose-us" },
   { label: "Gallery", href: "#gallery" },
   { label: "Reviews", href: "#reviews" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contact Us", href: "#contact" },
 ] as const;
 
 export const heroCarouselSlides = [
   {
     src: "/images/advocate-cutout.png",
-    alt: "Advocate K. Neelamegam — High Court Advocate",
+    alt: "Advocate K. Neelamegam — Best High Court Advocate in Madurai",
   },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Madurai_High_Court_Building.jpg/1280px-Madurai_High_Court_Building.jpg",

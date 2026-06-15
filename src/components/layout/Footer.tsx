@@ -24,8 +24,9 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm leading-relaxed text-white/70">
-              Trusted legal representation at the Madurai Bench of Madras High Court.
-              Professional, ethical, and client-focused advocacy since {siteConfig.foundingYear}.
+              Experienced High Court advocate for criminal, civil, family, and property law.
+              Trusted legal representation at the Madras High Court Madurai Bench since{" "}
+              {siteConfig.foundingYear}.
             </p>
           </div>
 
@@ -113,6 +114,17 @@ export function Footer() {
           <p>
             &copy; {year} {siteConfig.name} &mdash; {siteConfig.advocateName}. All rights
             reserved.
+          </p>
+          <p className="mt-2">
+            Developed By{" "}
+            <span className="text-white/70">{siteConfig.developer.name}</span>
+            {" — "}
+            <a
+              href={siteConfig.developer.phoneHref}
+              className="text-gold transition-colors hover:text-gold-light"
+            >
+              {siteConfig.developer.phone}
+            </a>
           </p>
         </div>
       </div>

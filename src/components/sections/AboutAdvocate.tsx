@@ -26,8 +26,9 @@ export function AboutAdvocate() {
             {siteConfig.advocateName}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted md:text-lg">
-            Practicing advocate at Madurai High Court Bench with years of courtroom experience,
-            delivering trusted legal solutions with professionalism and care.
+            Leading High Court advocate with 20+ years of expertise in criminal defense,
+            civil litigation, family law, and constitutional matters — trusted legal
+            solutions with professionalism and integrity.
           </p>
         </div>
 

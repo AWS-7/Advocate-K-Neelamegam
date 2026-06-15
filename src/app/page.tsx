@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContactButtons } from "@/components/layout/FloatingContactButtons";
@@ -7,7 +8,11 @@ import { AboutAdvocate } from "@/components/sections/AboutAdvocate";
 import { Gallery } from "@/components/sections/Gallery";
 import { Stats } from "@/components/sections/Stats";
 import { Reviews } from "@/components/sections/Reviews";
+import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
+import { homePageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = homePageMetadata;
 
 export default function HomePage() {
   return (
@@ -20,6 +25,7 @@ export default function HomePage() {
         <Gallery />
         <Stats />
         <Reviews />
+        <Faq />
         <Contact />
       </main>
       <Footer />

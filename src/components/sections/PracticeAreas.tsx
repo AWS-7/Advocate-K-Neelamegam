@@ -64,11 +64,11 @@ export function PracticeAreas() {
               >
                 Areas of Legal Expertise
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-                Comprehensive legal services across criminal, civil, family, property, and High
-                Court matters at the Madurai Bench — delivered with strategy, integrity, and
-                courtroom experience.
-              </p>
+            <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
+              Comprehensive legal services for criminal, civil, family, property, and High
+              Court matters — expert advocacy with strategy, integrity, and decades of
+              courtroom experience.
+            </p>
 
               <ul className="mt-6 space-y-2.5" aria-label="Practice highlights">
                 {practiceHighlights.map((item) => (

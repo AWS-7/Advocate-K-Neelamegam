@@ -14,8 +14,8 @@ export function Contact() {
     >
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <SectionHeading
-          title="Contact Us"
-          subtitle="Reach out for a confidential legal consultation. Available 24x7 for urgent matters."
+          title="Contact Advocate"
+          subtitle="Schedule a confidential consultation with Advocate K. Neelamegam for criminal, civil, family, property, and High Court legal matters. Available 24x7."
         />
 
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
