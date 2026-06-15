@@ -16,7 +16,7 @@ const highlights = [
 
 export function AboutAdvocate() {
   return (
-    <section id="about" className="relative overflow-hidden bg-grey-soft py-20 md:py-28" aria-labelledby="about-heading">
+    <section id="about" className="relative overflow-hidden bg-grey-soft pt-20 pb-10 md:pt-28 md:pb-12" aria-labelledby="about-heading">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(197,157,95,0.08),transparent_45%)]" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
