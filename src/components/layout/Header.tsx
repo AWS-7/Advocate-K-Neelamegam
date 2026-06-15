@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Menu, X, Scale } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site-data";
 import { cn, scrollToSection } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
@@ -50,20 +50,13 @@ export function Header() {
           className="flex items-center gap-3"
           aria-label={`${siteConfig.name} - Home`}
         >
-          <div className="relative h-10 w-10 overflow-hidden rounded-full border border-gold/50 bg-white/10">
+          <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-gold/50 bg-white/10">
             <Image
               src="/images/logo.svg"
               alt=""
               width={40}
               height={40}
               className="object-cover"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
-            />
-            <Scale
-              className="absolute inset-0 m-auto h-5 w-5 text-gold"
-              aria-hidden="true"
             />
           </div>
           <div className="hidden sm:block">
