@@ -6,8 +6,9 @@ export const siteConfig = {
   advocateName: "Advocate K. Neelamegam",
   tagline: "High Court Advocate – Madurai Bench",
   description:
-    "Providing trusted legal solutions with professionalism, integrity and confidentiality.",
+    "Providing Trusted Legal Solutions with Professionalism, Integrity & Confidentiality.",
   phone: "+91 80720 21876",
+  phoneDisplay: "080720 21876",
   phoneHref: "tel:+918072021876",
   whatsapp: "918072021876",
   email: "blue1947law@gmail.com",
@@ -41,11 +42,11 @@ export const siteConfig = {
 
 export const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Practice Areas", href: "#practice-areas" },
+  { label: "About Us", href: "#about" },
+  { label: "Practice Areas", href: "#practice-areas", hasDropdown: true },
   { label: "Why Choose Us", href: "#why-choose-us" },
   { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact Us", href: "#contact" },
 ] as const;
 
 export const practiceAreas = [
