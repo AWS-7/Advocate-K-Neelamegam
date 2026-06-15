@@ -38,15 +38,83 @@ export const siteConfig = {
     "https://www.google.com/maps/dir/?api=1&destination=9.9535339,78.1863904",
   whatsappMessage:
     "Hello Advocate K. Neelamegam, I would like to schedule a legal consultation regarding my case.",
+  heroMotto: "Justice, Integrity & Trusted Legal Advocacy",
+  locationLabel: "Madurai, Tamil Nadu",
 };
+
+export const heroFeatureTags = [
+  { icon: "scale", text: "High Court Matters" },
+  { icon: "gavel", text: "Criminal & Civil" },
+  { icon: "shield", text: "Ethical Practice" },
+  { icon: "clock", text: "24x7 Available" },
+  { icon: "users", text: "Family Law" },
+  { icon: "building", text: "Property Disputes" },
+  { icon: "file", text: "NI Act Cases" },
+  { icon: "map", text: "Chamber No. 43" },
+] as const;
 
 export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#about" },
   { label: "Practice Areas", href: "#practice-areas", hasDropdown: true },
   { label: "Why Choose Us", href: "#why-choose-us" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Reviews", href: "#reviews" },
   { label: "Contact Us", href: "#contact" },
+] as const;
+
+export const heroCarouselSlides = [
+  {
+    src: "/images/advocate-cutout.png",
+    alt: "Advocate K. Neelamegam — High Court Advocate",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Madurai_High_Court_Building.jpg/1280px-Madurai_High_Court_Building.jpg",
+    alt: "Madurai High Court Buildings",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
+    alt: "Scales of justice — legal authority",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=1200&q=80",
+    alt: "Courtroom gavel and legal practice",
+  },
+] as const;
+
+export const galleryImages = [
+  {
+    src: "/images/advocate-cutout.png",
+    alt: "Advocate K. Neelamegam at Madurai High Court",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Madurai_High_Court_Building.jpg/960px-Madurai_High_Court_Building.jpg",
+    alt: "Madurai High Court exterior",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
+    alt: "Scales of justice",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=800&q=80",
+    alt: "Legal gavel in courtroom",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80",
+    alt: "Legal documents and consultation",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
+    alt: "Professional legal consultation",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80",
+    alt: "Handshake — trusted legal partnership",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+    alt: "Legal research and case preparation",
+  },
 ] as const;
 
 export const practiceAreas = [

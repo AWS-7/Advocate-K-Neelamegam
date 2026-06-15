@@ -2,17 +2,18 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Phone, Star } from "lucide-react";
-import { getWhatsAppUrl, siteConfig } from "@/lib/site-data";
+import { MapPin, User } from "lucide-react";
+import { siteConfig } from "@/lib/site-data";
+import { scrollToSection } from "@/lib/utils";
+import { HeroCarousel } from "@/components/sections/HeroCarousel";
+import { HeroTagsMarquee } from "@/components/sections/HeroTagsMarquee";
 
-const HERO_BG =
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Madurai_High_Court_Building.jpg/1280px-Madurai_High_Court_Building.jpg";
-
-function WhatsAppIcon({ className }: { className?: string }) {
+function LocationBadge() {
   return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="currentColor">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-    </svg>
+    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-2 text-xs font-medium text-white/85 backdrop-blur-sm sm:text-sm">
+      <MapPin className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
+      {siteConfig.locationLabel}
+    </span>
   );
 }
 
@@ -20,87 +21,97 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[min(92vh,860px)] items-stretch overflow-hidden"
+      className="relative overflow-hidden bg-gradient-to-br from-[#081829] via-[#0a1f3d] to-[#0c2647] lg:bg-[#081829]"
       aria-label="Hero"
     >
-      <div className="absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 lg:hidden" aria-hidden="true">
         <Image
-          src={HERO_BG}
+          src="/images/hero-bg-mobile.png"
           alt=""
           fill
           priority
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/92 via-[#0a1628]/78 to-[#0a1628]/45" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#081829]/75 via-[#081829]/35 to-[#081829]/85" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_25%,rgba(197,157,95,0.07),transparent_55%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl flex-1 items-center gap-8 px-4 py-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-4 lg:px-8 lg:py-12">
+      <div className="pointer-events-none absolute inset-0 hidden lg:block" aria-hidden="true">
+        <Image
+          src="/images/hero-bg-desktop.png"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(197,157,95,0.06),transparent_50%)]" />
+      </div>
+
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:min-h-[calc(100svh-5rem)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-x-10 lg:gap-y-0 lg:px-8 lg:py-10 xl:gap-x-14">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65 }}
-          className="flex flex-col justify-center py-6 lg:py-10"
+          transition={{ duration: 0.55 }}
+          className="w-full max-w-md justify-self-center lg:col-start-2 lg:row-start-1 lg:max-w-[440px] lg:justify-self-end xl:max-w-[460px]"
         >
-          <span className="mb-5 inline-flex w-fit items-center border border-gold px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold sm:text-xs">
-            {siteConfig.tagline}
-          </span>
-
-          <h1 className="font-body text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.35rem]">
-            {siteConfig.advocateName}
-          </h1>
-
-          <p className="mt-2 font-body text-2xl font-bold text-gold sm:text-3xl lg:text-[2rem]">
-            {siteConfig.name}
-          </p>
-
-          <p className="mt-5 max-w-lg text-base leading-relaxed text-white/90 sm:text-[17px]">
-            {siteConfig.description}
-          </p>
-
-          <div className="mt-5 flex items-center gap-2.5">
-            <Star className="h-5 w-5 fill-gold text-gold" aria-hidden="true" />
-            <span className="text-sm font-medium text-white sm:text-base">
-              {siteConfig.rating.value} | {siteConfig.rating.label}
-            </span>
-          </div>
-
-          <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:flex-wrap">
-            <a
-              href={siteConfig.phoneHref}
-              className="inline-flex items-center justify-center gap-2.5 rounded-md bg-gold px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#b8922a] sm:text-[15px]"
-            >
-              <Phone className="h-4 w-4" aria-hidden="true" />
-              Call Now: {siteConfig.phoneDisplay}
-            </a>
-            <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 rounded-md border border-white/90 bg-transparent px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 sm:text-[15px]"
-            >
-              <WhatsAppIcon className="h-4 w-4" />
-              WhatsApp Us
-            </a>
-          </div>
+          <HeroCarousel />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.65, delay: 0.15 }}
-          className="relative flex items-end justify-center lg:justify-end"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.08 }}
+          className="flex min-w-0 flex-col items-center text-center lg:col-start-1 lg:row-start-1 lg:max-w-xl lg:items-start lg:text-left lg:justify-self-start lg:pr-2 xl:max-w-2xl xl:pr-6"
         >
-          <div className="relative h-[min(68vh,620px)] w-full max-w-md lg:h-[min(88vh,760px)] lg:max-w-none">
-            <Image
-              src="/images/advocate-cutout.png"
-              alt={`Professional portrait of ${siteConfig.advocateName}`}
-              fill
-              priority
-              className="object-contain object-bottom"
-              sizes="(max-width: 1024px) 90vw, 45vw"
-            />
+          <div className="mb-5 flex w-full justify-center lg:mb-6 lg:justify-start">
+            <LocationBadge />
           </div>
+
+          <h1 className="font-heading text-[1.65rem] font-bold leading-[1.15] text-white sm:text-3xl lg:text-[2.5rem] xl:text-[2.85rem]">
+            {siteConfig.advocateName}
+            <span className="mt-1 block text-[1.35rem] text-gold sm:text-2xl lg:text-[1.85rem] xl:text-[2.1rem]">
+              {siteConfig.name}
+            </span>
+          </h1>
+
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/80 sm:mt-5 sm:text-base lg:mx-0 lg:max-w-lg lg:text-[17px]">
+            {siteConfig.description}
+          </p>
+
+          <p className="mt-4 text-sm italic text-gold sm:text-base">
+            &ldquo;{siteConfig.heroMotto}&rdquo;
+          </p>
+
+          <div className="mt-6 flex w-full flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
+            <button
+              type="button"
+              onClick={() => scrollToSection("about")}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-navy transition-colors hover:bg-gold-light sm:w-auto sm:text-[15px]"
+            >
+              <User className="h-4 w-4" aria-hidden="true" />
+              About Us
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection("contact")}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/10 sm:w-auto sm:text-[15px]"
+            >
+              <MapPin className="h-4 w-4" aria-hidden="true" />
+              View Location
+            </button>
+          </div>
+
+          {/* Full-bleed marquee on mobile */}
+          <div className="-mx-4 w-[calc(100%+2rem)] sm:-mx-6 sm:w-[calc(100%+3rem)] lg:mx-0 lg:w-full">
+            <HeroTagsMarquee />
+          </div>
+
+          <p className="mt-6 hidden text-sm text-white/60 lg:block">
+            <span className="font-semibold text-gold">{siteConfig.rating.value}</span> rating
+            &middot; {siteConfig.rating.label}
+          </p>
         </motion.div>
       </div>
     </section>

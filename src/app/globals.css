@@ -38,3 +38,35 @@ h4 {
 ::selection {
   background: color-mix(in srgb, var(--color-gold) 30%, transparent);
 }
+
+@keyframes gallery-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.gallery-marquee-track {
+  animation: gallery-scroll linear infinite;
+}
+
+.gallery-marquee-reverse {
+  animation-direction: reverse;
+}
+
+.hero-tags-marquee-track {
+  animation: gallery-scroll linear infinite;
+}
+
+.hero-tags-marquee:hover .hero-tags-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-marquee-track,
+  .hero-tags-marquee-track {
+    animation: none;
+  }
+}
