@@ -239,12 +239,6 @@ export function SeoJsonLd() {
             name: "High Court Advocate",
             item: `${SITE_URL}/#about`,
           },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: "Modern Search",
-            item: `${SITE_URL}/#modern-search`,
-          },
         ],
       },
     ],

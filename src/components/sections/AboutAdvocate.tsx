@@ -3,7 +3,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Award, CheckCircle2, Scale, Shield } from "lucide-react";
+import { heroCarouselSlides } from "@/lib/hero-carousel-data";
 import { infoCards, siteConfig, whyChooseUs } from "@/lib/site-data";
+
+const aboutPortrait = heroCarouselSlides[0];
 
 const ABOUT_IMAGE =
   "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=1000&q=80";
@@ -42,11 +45,16 @@ export function AboutAdvocate() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
               <Image
-                src="/images/advocate-cutout.png"
-                alt={siteConfig.advocateName}
-                fill
-                className="object-contain object-bottom bg-navy p-4"
+                src={aboutPortrait.src}
+                alt={aboutPortrait.alt}
+                width={aboutPortrait.width}
+                height={aboutPortrait.height}
+                className="h-full w-full object-cover"
+                style={{ objectPosition: aboutPortrait.objectPosition }}
+                placeholder="blur"
+                blurDataURL={aboutPortrait.blurDataURL}
                 sizes="(max-width: 1024px) 100vw, 40vw"
+                quality={82}
               />
             </div>
             <div className="absolute -bottom-5 -right-3 rounded-xl border border-gold/40 bg-white px-5 py-4 shadow-lg sm:-right-5">
