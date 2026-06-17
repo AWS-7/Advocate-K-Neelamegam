@@ -3,9 +3,11 @@ import { SITE_URL, seoKeywords, siteConfig } from "@/lib/site-data";
 
 const ogImage = "/images/og-image.svg";
 
-export function buildSiteMetadata(): Metadata {
-  const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
+const GOOGLE_SITE_VERIFICATION_CODE =
+  process.env.GOOGLE_SITE_VERIFICATION ??
+  "udFtVtTxsqvryhu6jqpX5jeO-hWhthuaWx5qE798yhk";
 
+export function buildSiteMetadata(): Metadata {
   return {
     metadataBase: new URL(SITE_URL),
     title: {
@@ -64,13 +66,9 @@ export function buildSiteMetadata(): Metadata {
       ICBM: `${siteConfig.geo.lat}, ${siteConfig.geo.lng}`,
       "content-language": "en-IN",
     },
-    ...(googleVerification
-      ? {
-          verification: {
-            google: googleVerification,
-          },
-        }
-      : {}),
+    verification: {
+      google: GOOGLE_SITE_VERIFICATION_CODE,
+    },
   };
 }
 
