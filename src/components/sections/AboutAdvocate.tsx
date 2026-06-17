@@ -14,7 +14,7 @@ const ABOUT_IMAGE =
 const highlights = [
   { icon: Scale, title: "High Court Practice", text: "Madurai Bench of Madras High Court" },
   { icon: Shield, title: "Ethical Advocacy", text: "Integrity & confidentiality in every case" },
-  { icon: Award, title: "Proven Experience", text: "20+ years of courtroom expertise" },
+  { icon: Award, title: "Proven Experience", text: "22+ years of courtroom expertise" },
 ];
 
 export function AboutAdvocate() {
@@ -29,7 +29,7 @@ export function AboutAdvocate() {
             {siteConfig.advocateName}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted md:text-lg">
-            Leading High Court advocate with 20+ years of expertise in criminal defense,
+            Leading High Court advocate with 22+ years of expertise in criminal defense,
             civil litigation, family law, and constitutional matters — trusted legal
             solutions with professionalism and integrity.
           </p>
@@ -58,7 +58,7 @@ export function AboutAdvocate() {
               />
             </div>
             <div className="absolute -bottom-5 -right-3 rounded-xl border border-gold/40 bg-white px-5 py-4 shadow-lg sm:-right-5">
-              <p className="font-heading text-3xl font-bold text-gold">20+</p>
+              <p className="font-heading text-3xl font-bold text-gold">22+</p>
               <p className="text-xs font-semibold uppercase tracking-wider text-muted">Years Experience</p>
             </div>
           </motion.div>

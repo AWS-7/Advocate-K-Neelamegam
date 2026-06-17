@@ -16,7 +16,7 @@ const CONTENT_SECURITY_POLICY = [
 
 export const securityHeaders: Readonly<Record<string, string>> = {
   "Content-Security-Policy": CONTENT_SECURITY_POLICY,
-  "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+  "Strict-Transport-Security": "max-age=63072000",
   "X-Content-Type-Options": "nosniff",
   "X-Frame-Options": "DENY",
   "X-XSS-Protection": "1; mode=block",

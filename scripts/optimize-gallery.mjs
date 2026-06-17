@@ -13,6 +13,26 @@ const BLUR_SIZE = 12;
 
 const gallerySources = [
   {
+    file: "Screenshot 2026-06-17 182944.png",
+    slug: "advocate-court-attire-portrait",
+    alt: "Advocate K. Neelamegam in High Court legal attire with advocate's bands",
+  },
+  {
+    file: "Screenshot 2026-06-17 182933.png",
+    slug: "legal-team-group-photo",
+    alt: "Advocate K. Neelamegam with legal team at Madurai High Court",
+  },
+  {
+    file: "Screenshot 2026-06-17 182926.png",
+    slug: "advocate-ceremonial-portrait",
+    alt: "Advocate K. Neelamegam — professional portrait",
+  },
+  {
+    file: "Screenshot 2026-06-17 182917.png",
+    slug: "advocate-outdoor-portrait",
+    alt: "Advocate K. Neelamegam — trusted High Court lawyer in Madurai",
+  },
+  {
     file: "Screenshot 2026-06-17 181810.png",
     slug: "enforcement-directorate-complaint",
     alt: "Advocates Neelamegam and Muthukumar filing complaint at Enforcement Directorate Madurai office",

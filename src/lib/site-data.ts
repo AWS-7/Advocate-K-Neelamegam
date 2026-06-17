@@ -70,7 +70,7 @@ export const siteConfig = {
     title:
       "Best Advocate in Madurai & Tamil Nadu | Indian High Court Lawyer | Advocate K. Neelamegam | Lumbini Law Associates",
     description:
-      "Best advocate in Madurai, Tamil Nadu & India — Advocate K. Neelamegam, experienced High Court lawyer for criminal, civil, family, property, NI Act & writ petitions. Lumbini Law Associates, Madras High Court Madurai Bench. 20+ years. 4.9★. Call 080720 21876.",
+      "Best advocate in Madurai, Tamil Nadu & India — Advocate K. Neelamegam, experienced High Court lawyer for criminal, civil, family, property, NI Act & writ petitions. Lumbini Law Associates, Madras High Court Madurai Bench. 22+ years. 4.9★. Call 080720 21876.",
     heroSubtitle:
       "High Court Advocate — Criminal, Civil, Family & Constitutional Law Specialist",
     nationalHeadline:
@@ -94,7 +94,7 @@ const coreFaqItems = [
   {
     question: "Who is a trusted High Court advocate for criminal and civil cases?",
     answer:
-      "Advocate K. Neelamegam is an experienced High Court lawyer with 20+ years of courtroom practice, specializing in criminal defense, civil suits, bail applications, appeals, and regulatory offences. Lumbini Law Associates is rated 4.9 stars with 91+ Google reviews.",
+      "Advocate K. Neelamegam is an experienced High Court lawyer with 22+ years of courtroom practice, specializing in criminal defense, civil suits, bail applications, appeals, and regulatory offences. Lumbini Law Associates is rated 4.9 stars with 91+ Google reviews.",
   },
   {
     question: "How do I hire a lawyer for a family law or divorce case?",
@@ -276,14 +276,14 @@ export const whyChooseUs = [
 export const infoCards = [
   { label: "Chamber No", value: "43" },
   { label: "Court", value: "Madurai High Court" },
-  { label: "Experience", value: "20+ Years" },
+  { label: "Experience", value: "22+ Years" },
   { label: "Availability", value: "24x7" },
 ] as const;
 
 export const stats = [
-  { value: 1000, suffix: "+", label: "Happy Clients" },
-  { value: 20, suffix: "+", label: "Years Experience" },
-  { value: 2000, suffix: "+", label: "Cases Handled" },
+  { value: 10000, suffix: "+", label: "Happy Clients" },
+  { value: 22, suffix: "+", label: "Years Experience" },
+  { value: 12500, suffix: "+", label: "Cases Handled" },
   { value: 95, suffix: "%", label: "Success Rate" },
 ] as const;
 

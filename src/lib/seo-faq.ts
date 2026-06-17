@@ -2,7 +2,7 @@ export const extendedFaqItems = [
   {
     question: "Who is the best advocate in Madurai?",
     answer:
-      "Advocate K. Neelamegam at Lumbini Law Associates, Chamber No. 43, Madurai High Court Buildings, is widely regarded as one of the best advocates in Madurai for criminal defense, civil litigation, family law, property disputes, and High Court matters with 20+ years of experience and 4.9-star Google ratings.",
+      "Advocate K. Neelamegam at Lumbini Law Associates, Chamber No. 43, Madurai High Court Buildings, is widely regarded as one of the best advocates in Madurai for criminal defense, civil litigation, family law, property disputes, and High Court matters with 22+ years of experience and 4.9-star Google ratings.",
   },
   {
     question: "Who is the best advocate in Tamil Nadu?",
@@ -77,6 +77,6 @@ export const extendedFaqItems = [
   {
     question: "Can I consult an Indian advocate for criminal appeal cases?",
     answer:
-      "Yes. Advocate K. Neelamegam handles criminal appeals, revision petitions, and bail matters before the Madras High Court Madurai Bench and lower courts with 20+ years of criminal law experience.",
+      "Yes. Advocate K. Neelamegam handles criminal appeals, revision petitions, and bail matters before the Madras High Court Madurai Bench and lower courts with 22+ years of criminal law experience.",
   },
 ] as const;

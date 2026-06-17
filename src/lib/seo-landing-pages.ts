@@ -21,7 +21,7 @@ function buildPage(
   focus: string,
 ): AdvocateLandingPage {
   const title = `${h1} | Advocate K. Neelamegam | Lumbini Law Associates`;
-  const description = `Looking for ${h1.toLowerCase()}? Advocate K. Neelamegam at Lumbini Law Associates offers trusted ${focus} with 20+ years experience, 4.9★ ratings, and Chamber No. 43, Madurai High Court. Call 080720 21876.`;
+  const description = `Looking for ${h1.toLowerCase()}? Advocate K. Neelamegam at Lumbini Law Associates offers trusted ${focus} with 22+ years experience, 4.9★ ratings, and Chamber No. 43, Madurai High Court. Call 080720 21876.`;
 
   const intro = `Advocate K. Neelamegam at Lumbini Law Associates is a trusted ${focus} serving clients in ${location} and across Tamil Nadu and India. With over 20 years of courtroom experience at the Madras High Court Madurai Bench, Chamber No. 43, Madurai High Court Buildings, clients receive ethical, strategic, and results-driven legal representation for criminal, civil, family, property, NI Act, and constitutional matters.`;
 

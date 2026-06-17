@@ -9,6 +9,34 @@ export type GalleryImage = {
 
 export const galleryImages = [
   {
+    "src": "/images/gallery/advocate-court-attire-portrait.webp",
+    "alt": "Advocate K. Neelamegam in High Court legal attire with advocate's bands",
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAQCdASoMAA8AA4BaJQBOgB9xng09DUAA/uKNIG3mJUwDC1/WUXqw221Jr+v64dEfdA8MRlWI8Iv1z/xOxZbeJ04J1tC1OEuKiW/pPLQ2+iOmguJrznBj1z8dS9ZqGjYEqoAA",
+    "width": 349,
+    "height": 449
+  },
+  {
+    "src": "/images/gallery/legal-team-group-photo.webp",
+    "alt": "Advocate K. Neelamegam with legal team at Madurai High Court",
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAQCdASoMAAYAA4BaJZgCdAEJHYXeAAD+CtZfj01MJBQLoHyYsrg18RjHJIOpZ/qjE2alp7KhTJfq9T6Uk5W0xxi7bcPpSMtKiurAAAA=",
+    "width": 737,
+    "height": 397
+  },
+  {
+    "src": "/images/gallery/advocate-ceremonial-portrait.webp",
+    "alt": "Advocate K. Neelamegam — professional portrait",
+    "blurDataURL": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAACwBACdASoMABUAPu1iqU2ppaOiMAgBMB2JbACdMoRwD1AALKtpWuiSroAT381gAP7wOO04gFfmKHkni/2rs1OwrCdkcThpn4iJi5QfgVcsLSeQ8WOHexL9pJtzp7kTDkwyV+y07A9MUxUHyvq6cp/6Cg3DNyOUKdqUr+d6IXzh4zVN0kg7XzkVoZAuij04PP3/n99bTR/vk37+vsN7s2YB8/KJWepg+vgQAAAA",
+    "width": 256,
+    "height": 452
+  },
+  {
+    "src": "/images/gallery/advocate-outdoor-portrait.webp",
+    "alt": "Advocate K. Neelamegam — trusted High Court lawyer in Madurai",
+    "blurDataURL": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACwBACdASoMABQAPu1iqU2ppaOiMAgBMB2JbACdMoFWVtYAN1bbdXofTiXu/eewAP5VtWD1frcOddq+4VVsIW1XmaAThG+ZFayTs1rBmwY8F6htC3ItxSCpurcLVStMfhHbJr3gAgxB6fGX1nSCLe4zcCNnwXXX5HpNzaYtPQ+jrjphgC7UyrdVQsLaXn5mhR/LuYSbH0LvgAAA",
+    "width": 271,
+    "height": 458
+  },
+  {
     "src": "/images/gallery/enforcement-directorate-complaint.webp",
     "alt": "Advocates Neelamegam and Muthukumar filing complaint at Enforcement Directorate Madurai office",
     "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwAgCdASoMAAsAA4BaJbACdADhcmqpTo0sAAD+pYKGAtKe6XGGuFoHmW1BQH/tD8A+7MunFiD4clOO12oehRsc3kNCArZjeFQQfV5KkKzppY46/Jj2C8u1fiXSQAAA",

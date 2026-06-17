@@ -58,7 +58,7 @@ export default async function PracticeAreaPage({ params }: Props) {
           <div className="mt-8 space-y-4 text-base leading-relaxed text-muted">
             <p>
               {siteConfig.advocateName} at {siteConfig.name} provides expert {area.title.toLowerCase()}{" "}
-              legal services for clients in Madurai, Tamil Nadu, and across India. With 20+ years of
+              legal services for clients in Madurai, Tamil Nadu, and across India. With 22+ years of
               experience at the Madras High Court Madurai Bench, Chamber No. 43, clients receive
               ethical, strategic, and results-driven advocacy.
             </p>
