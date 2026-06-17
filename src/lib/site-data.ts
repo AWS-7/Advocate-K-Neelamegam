@@ -275,40 +275,7 @@ export const heroCarouselSlides = [
   },
 ] as const;
 
-export const galleryImages = [
-  {
-    src: "/images/advocate-cutout.png",
-    alt: "Advocate K. Neelamegam at Madurai High Court",
-  },
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Madurai_High_Court_Building.jpg/960px-Madurai_High_Court_Building.jpg",
-    alt: "Madurai High Court exterior",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
-    alt: "Scales of justice",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=800&q=80",
-    alt: "Legal gavel in courtroom",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80",
-    alt: "Legal documents and consultation",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
-    alt: "Professional legal consultation",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80",
-    alt: "Handshake — trusted legal partnership",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
-    alt: "Legal research and case preparation",
-  },
-] as const;
+// Gallery images live in src/lib/gallery-data.ts (optimized WebP + blur placeholders).
 
 export const practiceAreas = [
   {
