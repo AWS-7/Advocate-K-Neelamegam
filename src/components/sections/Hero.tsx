@@ -54,7 +54,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55 }}
-          className="w-full max-w-md justify-self-center lg:col-start-2 lg:row-start-1 lg:max-w-[440px] lg:justify-self-end xl:max-w-[460px]"
+          className="w-full max-w-[280px] justify-self-center sm:max-w-md lg:col-start-2 lg:row-start-1 lg:max-w-[440px] lg:justify-self-end xl:max-w-[460px]"
         >
           <HeroCarousel />
         </motion.div>

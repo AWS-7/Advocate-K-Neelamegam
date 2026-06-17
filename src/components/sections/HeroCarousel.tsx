@@ -33,7 +33,7 @@ export function HeroCarousel() {
             {heroCarouselSlides.map((slide, index) => (
               <div
                 key={slide.src}
-                className="relative aspect-[4/5] min-w-0 flex-[0_0_100%] sm:aspect-[16/11] lg:aspect-[3/4] lg:max-h-[500px]"
+                className="relative aspect-[4/5] max-h-[220px] min-w-0 flex-[0_0_100%] sm:max-h-none sm:aspect-[16/11] lg:aspect-[3/4] lg:max-h-[500px]"
               >
                 <Image
                   src={slide.src}

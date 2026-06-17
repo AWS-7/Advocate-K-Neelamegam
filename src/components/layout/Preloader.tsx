@@ -56,7 +56,10 @@ export function Preloader() {
       return () => window.removeEventListener("load", onLoad);
     }
 
-    const ctx = gsap.context(() => {
+    let ctx: gsap.Context | undefined;
+
+    try {
+      ctx = gsap.context(() => {
       const particles = particlesRef.current?.querySelectorAll("[data-particle]");
       const tl = gsap.timeline({
         defaults: { ease: "power3.out" },
@@ -120,10 +123,14 @@ export function Preloader() {
         })
         .to(barTrackRef.current, { opacity: 0, duration: 0.45, ease: "power2.in" }, "+=0.05")
         .to(lineRef.current, { opacity: 0, duration: 0.35 }, "<");
-    });
+      });
+    } catch {
+      timelineDoneRef.current = true;
+      setVisible(false);
+    }
 
     return () => {
-      ctx.revert();
+      ctx?.revert();
       window.removeEventListener("load", onLoad);
     };
   }, []);

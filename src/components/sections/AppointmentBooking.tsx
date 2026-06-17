@@ -8,6 +8,7 @@ import {
   practiceAreas,
   siteConfig,
 } from "@/lib/site-data";
+import { validateAppointmentInput } from "@/lib/security/sanitize";
 import { cn } from "@/lib/utils";
 
 const caseTypeOptions = [
@@ -27,17 +28,24 @@ export function AppointmentBooking() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !phone.trim() || !date || !time) {
-      setError("Please fill in all required fields and select a time slot.");
+
+    const validated = validateAppointmentInput(
+      { name, phone, date, time, caseType },
+      appointmentSlots,
+    );
+
+    if (!validated.isValid) {
+      setError(validated.error ?? "Please fill in all required fields and select a time slot.");
       return;
     }
+
     setError("");
     const url = buildAppointmentWhatsApp({
-      name: name.trim(),
-      phone: phone.trim(),
-      date,
-      time,
-      caseType,
+      name: validated.name,
+      phone: validated.phone,
+      date: validated.date,
+      time: validated.time,
+      caseType: validated.caseType,
     });
     window.open(url, "_blank", "noopener,noreferrer");
   };

@@ -2,6 +2,8 @@ import type { Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { Preloader } from "@/components/layout/Preloader";
+import { SecurityShell } from "@/components/security/SecurityShell";
+import { ErrorBoundary } from "@/components/security/ErrorBoundary";
 import { buildSiteMetadata } from "@/lib/seo";
 import "./globals.css";
 
@@ -43,8 +45,10 @@ export default function RootLayout({
           Skip to main content
         </a>
         <SeoJsonLd />
-        <Preloader />
-        {children}
+        <ErrorBoundary section="preloader" fallback={null}>
+          <Preloader />
+        </ErrorBoundary>
+        <SecurityShell>{children}</SecurityShell>
       </body>
     </html>
   );

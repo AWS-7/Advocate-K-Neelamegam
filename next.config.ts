@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 import path from "path";
+import { securityHeaders } from "./src/lib/security/headers";
 
 const nextConfig: NextConfig = {
-  outputFileTracingRoot: path.join(__dirname),
-  turbopack: {
+  poweredByHeader: false,
+  outputFileTracingRoot: path.join(__dirname),  turbopack: {
     root: path.join(__dirname),
   },
   async redirects() {
@@ -16,8 +17,18 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  images: {
-    remotePatterns: [
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: Object.entries(securityHeaders).map(([key, value]) => ({
+          key,
+          value,
+        })),
+      },
+    ];
+  },
+  images: {    remotePatterns: [
       {
         protocol: "https",
         hostname: "images.unsplash.com",
