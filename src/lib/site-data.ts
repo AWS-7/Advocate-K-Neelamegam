@@ -256,26 +256,7 @@ export const navLinks = [
   { label: "Contact Us", href: "#contact" },
 ] as const;
 
-export const heroCarouselSlides = [
-  {
-    src: "/images/advocate-cutout.png",
-    alt: "Advocate K. Neelamegam — Best High Court Advocate in Madurai",
-  },
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Madurai_High_Court_Building.jpg/1280px-Madurai_High_Court_Building.jpg",
-    alt: "Madurai High Court Buildings",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
-    alt: "Scales of justice — legal authority",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=1200&q=80",
-    alt: "Courtroom gavel and legal practice",
-  },
-] as const;
-
-// Gallery images live in src/lib/gallery-data.ts (optimized WebP + blur placeholders).
+// Hero carousel slides live in src/lib/hero-carousel-data.ts (optimized WebP).
 
 export const practiceAreas = [
   {

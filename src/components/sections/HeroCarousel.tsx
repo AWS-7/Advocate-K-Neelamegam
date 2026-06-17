@@ -5,7 +5,7 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
-import { heroCarouselSlides } from "@/lib/site-data";
+import { heroCarouselSlides } from "@/lib/hero-carousel-data";
 import { cn } from "@/lib/utils";
 
 export function HeroCarousel() {
@@ -33,19 +33,22 @@ export function HeroCarousel() {
             {heroCarouselSlides.map((slide, index) => (
               <div
                 key={slide.src}
-                className="relative aspect-[16/10] min-w-0 flex-[0_0_100%] lg:aspect-[3/4] lg:max-h-[500px]"
+                className="relative aspect-[4/5] min-w-0 flex-[0_0_100%] sm:aspect-[16/11] lg:aspect-[3/4] lg:max-h-[500px]"
               >
                 <Image
                   src={slide.src}
                   alt={slide.alt}
-                  fill
+                  width={slide.width}
+                  height={slide.height}
                   priority={index === 0}
-                  className={cn(
-                    slide.src.includes("advocate-cutout")
-                      ? "object-contain object-bottom bg-gradient-to-b from-[#0a1f3d] to-[#0d2a4a] p-4 lg:p-5"
-                      : "object-cover",
-                  )}
-                  sizes="(max-width: 1024px) 100vw, 400px"
+                  placeholder="blur"
+                  blurDataURL={slide.blurDataURL}
+                  className="h-full w-full object-cover"
+                  style={{ objectPosition: slide.objectPosition }}
+                  sizes="(max-width: 1024px) 100vw, 420px"
+                  quality={80}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "low"}
                 />
               </div>
             ))}
