@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Scale, Phone, Mail, MapPin } from "lucide-react";
 import {
   navLinks,
@@ -5,6 +6,7 @@ import {
   siteConfig,
   getWhatsAppUrl,
 } from "@/lib/site-data";
+import { topAdvocateLandingPages } from "@/lib/seo-landing-pages";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -12,7 +14,7 @@ export function Footer() {
   return (
     <footer className="bg-navy-dark text-white">
       <div className="mx-auto max-w-7xl px-4 py-14 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div>
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/50 bg-white/5">
@@ -56,11 +58,34 @@ export function Footer() {
               {practiceAreas.map((area) => (
                 <li key={area.slug}>
                   <a
-                    href={`/#area-${area.slug}`}
+                    href={`/practice-areas/${area.slug}`}
                     className="text-sm text-white/70 transition-colors hover:text-gold"
                   >
                     {area.title}
                   </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 font-heading text-lg font-semibold text-gold">
+              Find Advocate
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/advocate" className="text-sm text-white/70 transition-colors hover:text-gold">
+                  All Locations
+                </Link>
+              </li>
+              {topAdvocateLandingPages.slice(0, 8).map((page) => (
+                <li key={page.slug}>
+                  <Link
+                    href={`/advocate/${page.slug}`}
+                    className="text-sm text-white/70 transition-colors hover:text-gold"
+                  >
+                    {page.h1}
+                  </Link>
                 </li>
               ))}
             </ul>

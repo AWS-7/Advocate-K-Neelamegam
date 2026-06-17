@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_URL, seoKeywords, siteConfig } from "@/lib/site-data";
+import { SITE_URL, primarySeoKeywords, siteConfig } from "@/lib/site-data";
 
 const ogImage = "/images/og-image.svg";
 
@@ -15,7 +15,7 @@ export function buildSiteMetadata(): Metadata {
       template: `%s | ${siteConfig.name}`,
     },
     description: siteConfig.seo.description,
-    keywords: [...seoKeywords],
+    keywords: [...primarySeoKeywords],
     authors: [{ name: siteConfig.advocateName, url: SITE_URL }],
     creator: siteConfig.advocateName,
     publisher: siteConfig.name,

@@ -5,6 +5,9 @@ import {
   siteConfig,
   testimonials,
 } from "@/lib/site-data";
+import { seoKeywords } from "@/lib/seo-keywords";
+
+const heroPortrait = `${SITE_URL}/images/hero/advocate-court-attire-portrait.webp`;
 
 const businessId = `${SITE_URL}/#business`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -38,13 +41,15 @@ export function SeoJsonLd() {
           siteConfig.advocateName,
           "Lumbini Law Associates Madurai",
           "Advocate K Neelamegam Madurai",
+          "Best Advocate in Madurai",
+          "Best Advocate in Tamil Nadu",
+          "Indian Advocate",
+          "Madurai High Court Advocate",
+          "Tamil Nadu Lawyer",
         ],
         url: SITE_URL,
         logo: `${SITE_URL}/images/logo.svg`,
-        image: [
-          `${SITE_URL}/images/advocate-cutout.png`,
-          `${SITE_URL}/images/og-image.svg`,
-        ],
+        image: [heroPortrait, `${SITE_URL}/images/og-image.svg`],
         description: siteConfig.seo.description,
         telephone: siteConfig.phone,
         email: siteConfig.email,
@@ -141,7 +146,7 @@ export function SeoJsonLd() {
         url: SITE_URL,
         telephone: siteConfig.phone,
         email: siteConfig.email,
-        image: `${SITE_URL}/images/advocate-cutout.png`,
+        image: heroPortrait,
         priceRange: "₹₹",
         address: {
           "@type": "PostalAddress",
@@ -188,7 +193,7 @@ export function SeoJsonLd() {
         description:
           "Experienced High Court advocate specializing in criminal defense, civil litigation, family law, property disputes, NI Act cases, and constitutional matters across Tamil Nadu and India.",
         url: SITE_URL,
-        image: `${SITE_URL}/images/advocate-cutout.png`,
+        image: heroPortrait,
         telephone: siteConfig.phone,
         email: siteConfig.email,
         worksFor: { "@id": businessId },
@@ -200,7 +205,7 @@ export function SeoJsonLd() {
           postalCode: siteConfig.address.pincode,
           addressCountry: "IN",
         },
-        knowsAbout: practiceAreas.map((a) => a.title),
+        knowsAbout: [...practiceAreas.map((a) => a.title), ...seoKeywords.slice(0, 100)],
       },
       {
         "@type": "WebSite",
