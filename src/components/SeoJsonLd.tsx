@@ -7,6 +7,8 @@ import {
 } from "@/lib/site-data";
 
 const businessId = `${SITE_URL}/#business`;
+const localBusinessId = `${SITE_URL}/#localbusiness`;
+const organizationId = `${SITE_URL}/#organization`;
 const attorneyId = `${SITE_URL}/#attorney`;
 const websiteId = `${SITE_URL}/#website`;
 
@@ -14,6 +16,20 @@ export function SeoJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "Organization",
+        "@id": organizationId,
+        name: siteConfig.name,
+        url: SITE_URL,
+        logo: `${SITE_URL}/images/logo.svg`,
+        founder: {
+          "@type": "Person",
+          name: siteConfig.founderName,
+          jobTitle: "Founder",
+        },
+        employee: { "@id": attorneyId },
+        sameAs: [siteConfig.googleMapsUrl, siteConfig.googleReviewsUrl],
+      },
       {
         "@type": "LegalService",
         "@id": businessId,
@@ -100,6 +116,8 @@ export function SeoJsonLd() {
           },
         ],
         sameAs: [siteConfig.googleMapsUrl, siteConfig.googleReviewsUrl],
+        parentOrganization: { "@id": organizationId },
+        location: { "@id": localBusinessId },
         employee: { "@id": attorneyId },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
@@ -114,6 +132,53 @@ export function SeoJsonLd() {
             },
           })),
         },
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": localBusinessId,
+        name: siteConfig.name,
+        description: siteConfig.seo.description,
+        url: SITE_URL,
+        telephone: siteConfig.phone,
+        email: siteConfig.email,
+        image: `${SITE_URL}/images/advocate-cutout.png`,
+        priceRange: "₹₹",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: siteConfig.address.line1,
+          addressLocality: siteConfig.address.city,
+          addressRegion: siteConfig.address.state,
+          postalCode: siteConfig.address.pincode,
+          addressCountry: "IN",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: siteConfig.geo.lat,
+          longitude: siteConfig.geo.lng,
+        },
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "00:00",
+          closes: "23:59",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: siteConfig.rating.value,
+          reviewCount: siteConfig.rating.count,
+          bestRating: 5,
+          worstRating: 1,
+        },
+        parentOrganization: { "@id": organizationId },
+        legalName: siteConfig.name,
       },
       {
         "@type": "Attorney",
@@ -144,11 +209,12 @@ export function SeoJsonLd() {
         url: SITE_URL,
         description: siteConfig.seo.description,
         inLanguage: "en-IN",
-        publisher: { "@id": businessId },
+        publisher: { "@id": organizationId },
       },
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/#faq`,
+        isPartOf: { "@id": websiteId },
         mainEntity: faqItems.map((item) => ({
           "@type": "Question",
           name: item.question,
@@ -172,6 +238,12 @@ export function SeoJsonLd() {
             position: 2,
             name: "High Court Advocate",
             item: `${SITE_URL}/#about`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Modern Search",
+            item: `${SITE_URL}/#modern-search`,
           },
         ],
       },

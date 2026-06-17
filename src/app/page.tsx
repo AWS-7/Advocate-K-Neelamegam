@@ -10,6 +10,7 @@ import { Stats } from "@/components/sections/Stats";
 import { Reviews } from "@/components/sections/Reviews";
 import { BlogPreview } from "@/components/sections/BlogPreview";
 import { Faq } from "@/components/sections/Faq";
+import { ModernSearch } from "@/components/sections/ModernSearch";
 import { Contact } from "@/components/sections/Contact";
 import { homePageMetadata } from "@/lib/seo";
 
@@ -28,6 +29,7 @@ export default function HomePage() {
         <Reviews />
         <BlogPreview />
         <Faq />
+        <ModernSearch />
         <Contact />
       </main>
       <Footer />

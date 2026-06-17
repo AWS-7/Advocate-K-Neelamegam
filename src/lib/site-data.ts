@@ -3,6 +3,7 @@ export const SITE_URL =
 
 export const siteConfig = {
   name: "Lumbini Law Associates",
+  founderName: "K. Nelamegam",
   advocateName: "Advocate K. Neelamegam",
   tagline: "High Court Advocate – Madurai Bench",
   description:
@@ -188,6 +189,55 @@ export const heroFeatureTags = [
   { icon: "building", text: "Property Disputes" },
   { icon: "file", text: "NI Act Cases" },
   { icon: "map", text: "Chamber No. 43" },
+] as const;
+
+export const modernSearchCards = [
+  {
+    id: "seo",
+    title: "Search Engine Optimization (SEO)",
+    description:
+      "Helping potential clients find Lumbini Law Associates through Google search with an optimized legal website structure.",
+    features: [
+      "Legal service keyword optimization",
+      "Search engine friendly content",
+      "Fast loading website performance",
+      "Mobile responsive design",
+      "Location based SEO optimization",
+      "Optimized practice area pages",
+      "Better online visibility",
+    ],
+    link: { label: "Practice Areas", href: "#practice-areas" },
+  },
+  {
+    id: "aeo",
+    title: "Answer Engine Optimization (AEO)",
+    description:
+      "Helping search engines and AI assistants understand legal services and provide accurate answers to client queries.",
+    features: [
+      "FAQ based legal content",
+      "Question focused optimization",
+      "Structured legal information",
+      "Schema markup implementation",
+      "Voice search optimization",
+      "Clear legal service explanations",
+    ],
+    link: { label: "Legal FAQ", href: "#faq" },
+  },
+  {
+    id: "geo",
+    title: "Generative Engine Optimization (GEO)",
+    description:
+      "Preparing Lumbini Law Associates website for AI-driven search experiences and future digital discovery.",
+    features: [
+      "AI-friendly content structure",
+      "Authority focused legal content",
+      "Expertise and trust signals",
+      "Detailed practice area information",
+      "Natural language content",
+      "Better AI search understanding",
+    ],
+    link: { label: "Legal Insights", href: "/blog" },
+  },
 ] as const;
 
 export const navLinks = [
