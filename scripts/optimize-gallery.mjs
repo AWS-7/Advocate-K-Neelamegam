@@ -18,11 +18,6 @@ const gallerySources = [
     alt: "Advocate K. Neelamegam in High Court legal attire with advocate's bands",
   },
   {
-    file: "Screenshot 2026-06-17 182933.png",
-    slug: "legal-team-group-photo",
-    alt: "Advocate K. Neelamegam with legal team at Madurai High Court",
-  },
-  {
     file: "Screenshot 2026-06-17 182926.png",
     slug: "advocate-ceremonial-portrait",
     alt: "Advocate K. Neelamegam — professional portrait",

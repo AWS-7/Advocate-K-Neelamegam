@@ -20,15 +20,6 @@ export const heroCarouselSlides = [
     "fit": "cover"
   },
   {
-    "src": "/images/hero/legal-team-group-photo.webp",
-    "alt": "Advocate K. Neelamegam with legal team at Madurai High Court",
-    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAQCdASoMAAYAA4BaJZgCdAEJHYXeAAD+CtZfj01MJBQLoHyYsrg18RjHJIOpZ/qjE2alp7KhTJfq9T6Uk5W0xxi7bcPpSMtKiurAAAA=",
-    "width": 737,
-    "height": 397,
-    "objectPosition": "center 28%",
-    "fit": "cover"
-  },
-  {
     "src": "/images/hero/advocate-ceremonial-portrait.webp",
     "alt": "Advocate K. Neelamegam — professional portrait",
     "blurDataURL": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAACwBACdASoMABUAPu1iqU2ppaOiMAgBMB2JbACdMoRwD1AALKtpWuiSroAT381gAP7wOO04gFfmKHkni/2rs1OwrCdkcThpn4iJi5QfgVcsLSeQ8WOHexL9pJtzp7kTDkwyV+y07A9MUxUHyvq6cp/6Cg3DNyOUKdqUr+d6IXzh4zVN0kg7XzkVoZAuij04PP3/n99bTR/vk37+vsN7s2YB8/KJWepg+vgQAAAA",

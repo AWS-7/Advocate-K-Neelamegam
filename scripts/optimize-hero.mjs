@@ -20,13 +20,6 @@ const heroSources = [
     fit: "cover",
   },
   {
-    file: "Screenshot 2026-06-17 182933.png",
-    slug: "legal-team-group-photo",
-    alt: "Advocate K. Neelamegam with legal team at Madurai High Court",
-    objectPosition: "center 28%",
-    fit: "cover",
-  },
-  {
     file: "Screenshot 2026-06-17 182926.png",
     slug: "advocate-ceremonial-portrait",
     alt: "Advocate K. Neelamegam — professional portrait",
