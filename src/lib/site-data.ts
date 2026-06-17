@@ -2,6 +2,8 @@ export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://lumbinilawassociates.in";
 
 export const SITE_DOMAIN = "lumbinilawassociates.in";
+export const SITE_WWW_DOMAIN = "www.lumbinilawassociates.in";
+export const SITE_DOMAINS = [SITE_DOMAIN, SITE_WWW_DOMAIN] as const;
 
 export const siteConfig = {
   name: "Lumbini Law Associates",
