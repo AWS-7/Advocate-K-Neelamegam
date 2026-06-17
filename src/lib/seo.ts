@@ -3,7 +3,7 @@ import { SITE_URL, primarySeoKeywords, siteConfig } from "@/lib/site-data";
 
 const ogImage = "/images/og-image.svg";
 
-const GOOGLE_SITE_VERIFICATION_CODE =
+export const GOOGLE_SITE_VERIFICATION =
   process.env.GOOGLE_SITE_VERIFICATION ??
   "udFtVtTxsqvryhu6jqpX5jeO-hWhthuaWx5qE798yhk";
 
@@ -67,7 +67,7 @@ export function buildSiteMetadata(): Metadata {
       "content-language": "en-IN",
     },
     verification: {
-      google: GOOGLE_SITE_VERIFICATION_CODE,
+      google: GOOGLE_SITE_VERIFICATION,
     },
   };
 }

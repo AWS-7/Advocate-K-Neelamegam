@@ -4,7 +4,7 @@ import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { Preloader } from "@/components/layout/Preloader";
 import { SecurityShell } from "@/components/security/SecurityShell";
 import { ErrorBoundary } from "@/components/security/ErrorBoundary";
-import { buildSiteMetadata } from "@/lib/seo";
+import { buildSiteMetadata, GOOGLE_SITE_VERIFICATION } from "@/lib/seo";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -37,6 +37,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN" className={`${playfair.variable} ${inter.variable}`}>
+      <head>
+        <meta
+          name="google-site-verification"
+          content={GOOGLE_SITE_VERIFICATION}
+        />
+      </head>
       <body className="antialiased">
         <a
           href="#main-content"
