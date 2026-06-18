@@ -41,29 +41,20 @@ export const heroCarouselSlides = [
 
 export const heroCarouselDesktopSlides = [
   {
-    "src": "/images/hero/lumbini-poster-court-attire.webp",
+    "src": "/images/hero/lumbini-desktop-banner-court-attire.webp",
     "alt": "Lumbini Law Associates — Advocate K. Neelamegam High Court advocate professional poster",
-    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABwAgCdASoMAA8AA4BaJZACdIDZFxR8wmACeiBAAP7w4VPf1f9F8PsLbwBfxU0e8ycLE399WqgvBxS4p/6a71ySTCRsY+U9QN5xZmXUjzXajOIFtb926tuQweGuSvwQAAA=",
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoMAA8AA4BaJYgCdAEDfY0d7vEwAP710vizzjISSRpfffjNuu2aFdjgZMrjB/X7qc+7k/e6vB6WOP5sTACQCg5ZODa4jqIAAAA=",
     "width": 720,
     "height": 914,
     "objectPosition": "center center",
     "fit": "contain"
   },
   {
-    "src": "/images/hero/lumbini-poster-ceremonial.webp",
-    "alt": "Advocate K. Nelamegam — Lumbini Law Associates practice areas and legal services poster",
-    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAQCdASoMAA8AA4BaJaACdAC3ZRllgAD+8YA33e577x8dPgvwFhAXTdLHku0G1qR6MV5p7bBdCazlvobvjI2qPcKZ0dKh+hT2/F3OKiFkEwNU6eXpUFLY0AA=",
+    "src": "/images/hero/lumbini-desktop-banner-blue-blazer.webp",
+    "alt": "Advocate K. Neelamegam — Lumbini Law Associates Madurai legal services poster",
+    "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAwAgCdASoMABAAA4BaJaACdADhhdvgD4OIoAD+9euy4X+/B5Hq87fMbQcqwoDDNAsqLgpwgL44TVvmhQ/Q06jZOUr0Vw98i2W6YZb2J8FzDNhPwCSeSIACYFBrhikhoLP4ae1BXn3ejQAA",
     "width": 720,
-    "height": 917,
-    "objectPosition": "center center",
-    "fit": "contain"
-  },
-  {
-    "src": "/images/hero/lumbini-poster-outdoor.webp",
-    "alt": "Advocate K. Nelamegam — experienced dedicated trusted legal advocate poster",
-    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQAgCdASoMABAAA4BaJbACdADdRmU+m7eAAP70sPbq+P3QMsL5sdtnusqvuWMSwnpsuUebBYQAztoVkb2ONM0QDA5UvfojMQNvcEfs/0dfQba0FvHzJGvXIFBKesWDhniAFF9AAAA=",
-    "width": 720,
-    "height": 963,
+    "height": 960,
     "objectPosition": "center center",
     "fit": "contain"
   }
