@@ -7,7 +7,7 @@ import {
 } from "@/lib/site-data";
 import { seoKeywords } from "@/lib/seo-keywords";
 
-const heroPortrait = `${SITE_URL}/images/hero/advocate-court-attire-portrait.webp`;
+const heroPortrait = `${SITE_URL}/images/gallery/advocate-court-attire-portrait.webp`;
 
 const businessId = `${SITE_URL}/#business`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;

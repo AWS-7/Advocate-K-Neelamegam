@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { galleryImages } from "@/lib/gallery-data";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { GalleryLightbox } from "@/components/sections/GalleryLightbox";
 
 type GalleryImage = (typeof galleryImages)[number];
 
@@ -9,6 +13,7 @@ type MarqueeRowProps = {
   reverse?: boolean;
   duration?: number;
   eagerCount?: number;
+  onImageClick: (image: GalleryImage) => void;
 };
 
 function MarqueeRow({
@@ -16,6 +21,7 @@ function MarqueeRow({
   reverse = false,
   duration = 35,
   eagerCount = 0,
+  onImageClick,
 }: MarqueeRowProps) {
   const track = [...images, ...images];
 
@@ -29,16 +35,19 @@ function MarqueeRow({
           const isEager = index < eagerCount;
 
           return (
-            <div
+            <button
               key={`${image.src}-${index}`}
-              className="relative h-44 w-64 shrink-0 overflow-hidden rounded-xl border border-navy/10 shadow-md sm:h-52 sm:w-80"
+              type="button"
+              onClick={() => onImageClick(image)}
+              className="group relative h-44 w-64 shrink-0 overflow-hidden rounded-xl border border-navy/10 shadow-md transition-shadow hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:h-52 sm:w-80"
+              aria-label={`View ${image.alt}`}
             >
               <Image
                 src={image.src}
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
-                className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 640px) 256px, 320px"
                 quality={75}
                 placeholder="blur"
@@ -47,8 +56,11 @@ function MarqueeRow({
                 fetchPriority={isEager ? "high" : "low"}
                 decoding="async"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent opacity-0 transition-opacity hover:opacity-100" />
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/55 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" />
+              <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-navy opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 sm:text-xs">
+                Tap to view
+              </span>
+            </button>
           );
         })}
       </div>
@@ -57,6 +69,7 @@ function MarqueeRow({
 }
 
 export function Gallery() {
+  const [activeImage, setActiveImage] = useState<GalleryImage | null>(null);
   const midpoint = Math.ceil(galleryImages.length / 2);
   const rowOne = galleryImages.slice(0, midpoint);
   const rowTwo = galleryImages.slice(midpoint);
@@ -75,13 +88,21 @@ export function Gallery() {
       </div>
 
       <div className="mt-4 space-y-5 md:mt-6 md:space-y-6">
-        <MarqueeRow images={rowOne} duration={40} eagerCount={2} />
+        <MarqueeRow
+          images={rowOne}
+          duration={40}
+          eagerCount={2}
+          onImageClick={setActiveImage}
+        />
         <MarqueeRow
           images={rowTwo.length ? rowTwo : rowOne}
           reverse
           duration={46}
+          onImageClick={setActiveImage}
         />
       </div>
+
+      <GalleryLightbox image={activeImage} onClose={() => setActiveImage(null)} />
     </section>
   );
 }

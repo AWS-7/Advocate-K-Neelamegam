@@ -3,10 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Award, CheckCircle2, Scale, Shield } from "lucide-react";
-import { heroCarouselSlides } from "@/lib/hero-carousel-data";
+import { galleryImages } from "@/lib/gallery-data";
 import { infoCards, siteConfig, whyChooseUs } from "@/lib/site-data";
 
-const aboutPortrait = heroCarouselSlides[0];
+const aboutPortrait =
+  galleryImages.find((image) => image.src.includes("advocate-court-attire-portrait")) ??
+  galleryImages[0];
 
 const ABOUT_IMAGE =
   "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=1000&q=80";
@@ -50,7 +52,7 @@ export function AboutAdvocate() {
                 width={aboutPortrait.width}
                 height={aboutPortrait.height}
                 className="h-full w-full object-cover"
-                style={{ objectPosition: aboutPortrait.objectPosition }}
+                style={{ objectPosition: "center 18%" }}
                 placeholder="blur"
                 blurDataURL={aboutPortrait.blurDataURL}
                 sizes="(max-width: 1024px) 100vw, 40vw"
