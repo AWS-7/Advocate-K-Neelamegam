@@ -5,7 +5,7 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
-import { heroCarouselSlides } from "@/lib/hero-carousel-data";
+import { heroCarouselDesktopSlides } from "@/lib/hero-carousel-data";
 import { cn } from "@/lib/utils";
 
 export function HeroCarousel() {
@@ -26,14 +26,14 @@ export function HeroCarousel() {
   }, [emblaApi]);
 
   return (
-    <div className="relative w-full">
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0d2a4a]/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] lg:rounded-3xl">
+    <div className="relative hidden w-full lg:block">
+      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0d2a4a]/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
         <div ref={emblaRef} className="overflow-hidden">
           <div className="flex">
-            {heroCarouselSlides.map((slide, index) => (
+            {heroCarouselDesktopSlides.map((slide, index) => (
               <div
                 key={slide.src}
-                className="relative aspect-[16/10] max-h-[200px] min-w-0 flex-[0_0_100%] sm:max-h-[240px] lg:aspect-[3/4] lg:max-h-[500px]"
+                className="relative aspect-[3/4] max-h-[500px] min-w-0 flex-[0_0_100%]"
               >
                 <Image
                   src={slide.src}
@@ -50,7 +50,7 @@ export function HeroCarousel() {
                       : "object-cover",
                   )}
                   style={{ objectPosition: slide.objectPosition }}
-                  sizes="(max-width: 1024px) 100vw, 420px"
+                  sizes="420px"
                   quality={80}
                   loading={index === 0 ? "eager" : "lazy"}
                   fetchPriority={index === 0 ? "high" : "low"}
@@ -65,7 +65,7 @@ export function HeroCarousel() {
           role="tablist"
           aria-label="Hero carousel slides"
         >
-          {heroCarouselSlides.map((_, index) => (
+          {heroCarouselDesktopSlides.map((_, index) => (
             <button
               key={index}
               type="button"

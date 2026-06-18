@@ -9,31 +9,31 @@ export type HeroCarouselSlide = {
   fit: "cover" | "contain";
 };
 
-export const heroCarouselSlides = [
+export const heroCarouselDesktopSlides = [
   {
-    "src": "/images/hero/lumbini-banner-dark.webp",
-    "alt": "Lumbini Law Associates — Advocate K. Nelamegam professional law firm banner",
-    "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoMAAcAA4BaJZwC7AERH46ngAD+2smLymJdpgCA+yT05feMjs0MwEpAAAA=",
-    "width": 960,
-    "height": 540,
+    "src": "/images/hero/lumbini-poster-court-attire.webp",
+    "alt": "Lumbini Law Associates — Advocate K. Neelamegam High Court advocate professional poster",
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABwAgCdASoMAA8AA4BaJZACdIDZFxR8wmACeiBAAP7w4VPf1f9F8PsLbwBfxU0e8ycLE399WqgvBxS4p/6a71ySTCRsY+U9QN5xZmXUjzXajOIFtb926tuQweGuSvwQAAA=",
+    "width": 640,
+    "height": 812,
     "objectPosition": "center center",
     "fit": "contain"
   },
   {
-    "src": "/images/hero/lumbini-banner-blue.webp",
-    "alt": "Advocate K. Nelamegam — Lumbini Law Associates Madurai legal services banner",
-    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoMAAcAA4BaJZQCdADcUMIphYAA/qNME593r7CNrxsPheAIYQw/P4XWoo3GYs5KhB1WqVVMlx0zv/l61E+UH2BiAAA=",
-    "width": 960,
-    "height": 540,
+    "src": "/images/hero/lumbini-poster-ceremonial.webp",
+    "alt": "Advocate K. Neelamegam — Lumbini Law Associates practice areas and legal services poster",
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAQCdASoMAA8AA4BaJaACdAC3ZRllgAD+8YA33e577x8dPgvwFhAXTdLHku0G1qR6MV5p7bBdCazlvobvjI2qPcKZ0dKh+hT2/F3OKiFkEwNU6eXpUFLY0AA=",
+    "width": 640,
+    "height": 815,
     "objectPosition": "center center",
     "fit": "contain"
   },
   {
-    "src": "/images/hero/lumbini-banner-ceremonial.webp",
-    "alt": "Advocate K. Nelamegam — experienced dedicated trusted legal advocate banner",
-    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoMAAcAA4BaJZQCsAEUn5lUw6MAAP70lT5L6LBDU9rvPbhKmNB1vXP1wvB5T3jfPE7HjPk+gAA=",
-    "width": 960,
-    "height": 540,
+    "src": "/images/hero/lumbini-poster-outdoor.webp",
+    "alt": "Advocate K. Neelamegam — experienced dedicated trusted legal advocate poster",
+    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQAgCdASoMABAAA4BaJbACdADdRmU+m7eAAP70sPbq+P3QMsL5sdtnusqvuWMSwnpsuUebBYQAztoVkb2ONM0QDA5UvfojMQNvcEfs/0dfQba0FvHzJGvXIFBKesWDhniAFF9AAAA=",
+    "width": 640,
+    "height": 856,
     "objectPosition": "center center",
     "fit": "contain"
   }

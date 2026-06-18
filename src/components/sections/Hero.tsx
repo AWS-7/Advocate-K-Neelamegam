@@ -54,7 +54,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55 }}
-          className="order-1 w-full max-w-[340px] sm:max-w-md lg:order-2 lg:col-start-2 lg:row-start-1 lg:max-w-[440px] lg:justify-self-end xl:max-w-[460px]"
+          className="hidden w-full max-w-[440px] lg:order-2 lg:col-start-2 lg:row-start-1 lg:block lg:justify-self-end xl:max-w-[460px]"
         >
           <HeroCarousel />
         </motion.div>
@@ -63,7 +63,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.08 }}
-          className="order-2 flex w-full min-w-0 max-w-lg flex-col items-center text-center lg:order-1 lg:col-start-1 lg:row-start-1 lg:max-w-xl lg:items-start lg:text-left lg:justify-self-start lg:pr-2 xl:max-w-2xl xl:pr-6"
+          className="flex w-full min-w-0 max-w-lg flex-col items-center text-center lg:order-1 lg:col-start-1 lg:row-start-1 lg:max-w-xl lg:items-start lg:text-left lg:justify-self-start lg:pr-2 xl:max-w-2xl xl:pr-6"
         >
           <div className="mb-4 flex w-full justify-center sm:mb-5 lg:mb-6 lg:justify-start">
             <LocationBadge />
