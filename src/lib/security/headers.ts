@@ -7,7 +7,7 @@ const CONTENT_SECURITY_POLICY = [
   "connect-src 'self'",
   "media-src 'self'",
   "object-src 'none'",
-  "frame-src 'none'",
+  "frame-src 'self' https://www.google.com https://maps.google.com https://www.google.co.in",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self' https://wa.me https://api.whatsapp.com",

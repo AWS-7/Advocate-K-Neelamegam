@@ -122,7 +122,7 @@ export function AboutAdvocate() {
           viewport={{ once: true }}
           className="mt-10 overflow-hidden rounded-2xl shadow-lg lg:mt-12"
         >
-          <div className="relative aspect-[21/9] min-h-[180px]">
+          <div className="relative min-h-[220px] w-full sm:aspect-[21/9] sm:min-h-[180px]">
             <Image
               src={ABOUT_IMAGE}
               alt="Legal practice at Madurai High Court"
@@ -132,11 +132,12 @@ export function AboutAdvocate() {
               sizes="100vw"
             />
             <div className="absolute inset-0 bg-navy/55" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-              <p className="font-heading text-xl font-bold text-white md:text-3xl">
-                Chamber No. 43, Madurai High Court Buildings
+            <div className="absolute inset-0 flex flex-col items-center justify-center px-4 py-5 text-center sm:px-6 sm:py-6">
+              <p className="max-w-[18rem] text-balance font-heading text-[0.95rem] font-bold leading-snug text-white sm:max-w-2xl sm:text-xl md:text-3xl">
+                <span className="block sm:inline">Chamber No. 43,</span>{" "}
+                <span className="block sm:inline">Madurai High Court Buildings</span>
               </p>
-              <p className="mt-2 text-sm text-white/85 md:text-base">
+              <p className="mt-2.5 max-w-[16rem] text-balance text-xs leading-relaxed text-white/90 sm:max-w-none sm:mt-2 sm:text-sm md:text-base">
                 Trusted legal representation since {siteConfig.foundingYear}
               </p>
             </div>

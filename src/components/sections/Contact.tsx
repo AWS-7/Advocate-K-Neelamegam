@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { AppointmentBooking } from "@/components/sections/AppointmentBooking";
 
 export function Contact() {
-  const mapEmbedUrl = `https://maps.google.com/maps?q=${siteConfig.geo.lat},${siteConfig.geo.lng}&z=15&output=embed`;
+  const mapEmbedUrl = `https://www.google.com/maps?q=${siteConfig.geo.lat},${siteConfig.geo.lng}&hl=en&z=15&output=embed`;
 
   return (
     <section
