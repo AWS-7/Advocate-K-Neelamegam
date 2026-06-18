@@ -49,12 +49,21 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(197,157,95,0.06),transparent_50%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto grid min-h-[calc(100dvh-4.5rem)] max-w-7xl grid-cols-1 content-center items-center justify-items-center gap-6 px-4 py-10 sm:gap-8 sm:px-6 sm:py-12 lg:min-h-[calc(100svh-5rem)] lg:grid-cols-[1.1fr_0.9fr] lg:justify-items-stretch lg:gap-x-10 lg:gap-y-0 lg:px-8 lg:py-10 xl:gap-x-14">
+      <div className="relative z-10 mx-auto grid min-h-[calc(100dvh-4.5rem)] max-w-7xl grid-cols-1 content-center items-center justify-items-center gap-5 px-4 py-8 sm:gap-6 sm:px-6 sm:py-10 lg:min-h-[calc(100svh-5rem)] lg:grid-cols-[1.1fr_0.9fr] lg:justify-items-stretch lg:gap-x-10 lg:gap-y-0 lg:px-8 lg:py-10 xl:gap-x-14">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
+          className="order-1 w-full max-w-[340px] sm:max-w-md lg:order-2 lg:col-start-2 lg:row-start-1 lg:max-w-[440px] lg:justify-self-end xl:max-w-[460px]"
+        >
+          <HeroCarousel />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.08 }}
-          className="flex w-full min-w-0 max-w-lg flex-col items-center text-center lg:col-start-1 lg:row-start-1 lg:max-w-xl lg:items-start lg:text-left lg:justify-self-start lg:pr-2 xl:max-w-2xl xl:pr-6"
+          className="order-2 flex w-full min-w-0 max-w-lg flex-col items-center text-center lg:order-1 lg:col-start-1 lg:row-start-1 lg:max-w-xl lg:items-start lg:text-left lg:justify-self-start lg:pr-2 xl:max-w-2xl xl:pr-6"
         >
           <div className="mb-4 flex w-full justify-center sm:mb-5 lg:mb-6 lg:justify-start">
             <LocationBadge />
@@ -106,15 +115,6 @@ export function Hero() {
             <span className="font-semibold text-gold">{siteConfig.rating.value}</span> rating
             &middot; {siteConfig.rating.label}
           </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55 }}
-          className="hidden w-full max-w-[440px] lg:col-start-2 lg:row-start-1 lg:block lg:justify-self-end xl:max-w-[460px]"
-        >
-          <HeroCarousel />
         </motion.div>
       </div>
     </section>

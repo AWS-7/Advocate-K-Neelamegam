@@ -13,25 +13,25 @@ const BLUR_SIZE = 12;
 
 const heroSources = [
   {
-    file: "Screenshot 2026-06-17 182944.png",
-    slug: "advocate-court-attire-portrait",
-    alt: "Advocate K. Neelamegam in High Court legal attire with advocate's bands",
-    objectPosition: "center 18%",
-    fit: "cover",
+    file: "ChatGPT Image Jun 18, 2026, 08_13_01 AM.png",
+    slug: "lumbini-banner-dark",
+    alt: "Lumbini Law Associates — Advocate K. Nelamegam professional law firm banner",
+    objectPosition: "center center",
+    fit: "contain",
   },
   {
-    file: "Screenshot 2026-06-17 182926.png",
-    slug: "advocate-ceremonial-portrait",
-    alt: "Advocate K. Neelamegam — professional portrait",
-    objectPosition: "center 15%",
-    fit: "cover",
+    file: "ChatGPT Image Jun 18, 2026, 08_15_08 AM.png",
+    slug: "lumbini-banner-blue",
+    alt: "Advocate K. Nelamegam — Lumbini Law Associates Madurai legal services banner",
+    objectPosition: "center center",
+    fit: "contain",
   },
   {
-    file: "Screenshot 2026-06-17 182917.png",
-    slug: "advocate-outdoor-portrait",
-    alt: "Advocate K. Neelamegam — trusted High Court lawyer in Madurai",
-    objectPosition: "center 20%",
-    fit: "cover",
+    file: "ChatGPT Image Jun 18, 2026, 08_17_54 AM.png",
+    slug: "lumbini-banner-ceremonial",
+    alt: "Advocate K. Nelamegam — experienced dedicated trusted legal advocate banner",
+    objectPosition: "center center",
+    fit: "contain",
   },
 ];
 
@@ -64,7 +64,7 @@ async function main() {
     const width = Math.min(meta.width ?? HERO_MAX_WIDTH, HERO_MAX_WIDTH);
     const height = meta.height
       ? Math.round((width / (meta.width ?? 1)) * meta.height)
-      : 1200;
+      : 600;
 
     await sharp(inputPath)
       .rotate()

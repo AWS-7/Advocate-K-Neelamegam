@@ -11,30 +11,30 @@ export type HeroCarouselSlide = {
 
 export const heroCarouselSlides = [
   {
-    "src": "/images/hero/advocate-court-attire-portrait.webp",
-    "alt": "Advocate K. Neelamegam in High Court legal attire with advocate's bands",
-    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAQCdASoMAA8AA4BaJQBOgB9xng09DUAA/uKNIG3mJUwDC1/WUXqw221Jr+v64dEfdA8MRlWI8Iv1z/xOxZbeJ04J1tC1OEuKiW/pPLQ2+iOmguJrznBj1z8dS9ZqGjYEqoAA",
-    "width": 349,
-    "height": 449,
-    "objectPosition": "center 18%",
-    "fit": "cover"
+    "src": "/images/hero/lumbini-banner-dark.webp",
+    "alt": "Lumbini Law Associates — Advocate K. Nelamegam professional law firm banner",
+    "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoMAAcAA4BaJZwC7AERH46ngAD+2smLymJdpgCA+yT05feMjs0MwEpAAAA=",
+    "width": 960,
+    "height": 540,
+    "objectPosition": "center center",
+    "fit": "contain"
   },
   {
-    "src": "/images/hero/advocate-ceremonial-portrait.webp",
-    "alt": "Advocate K. Neelamegam — professional portrait",
-    "blurDataURL": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAACwBACdASoMABUAPu1iqU2ppaOiMAgBMB2JbACdMoRwD1AALKtpWuiSroAT381gAP7wOO04gFfmKHkni/2rs1OwrCdkcThpn4iJi5QfgVcsLSeQ8WOHexL9pJtzp7kTDkwyV+y07A9MUxUHyvq6cp/6Cg3DNyOUKdqUr+d6IXzh4zVN0kg7XzkVoZAuij04PP3/n99bTR/vk37+vsN7s2YB8/KJWepg+vgQAAAA",
-    "width": 256,
-    "height": 452,
-    "objectPosition": "center 15%",
-    "fit": "cover"
+    "src": "/images/hero/lumbini-banner-blue.webp",
+    "alt": "Advocate K. Nelamegam — Lumbini Law Associates Madurai legal services banner",
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoMAAcAA4BaJZQCdADcUMIphYAA/qNME593r7CNrxsPheAIYQw/P4XWoo3GYs5KhB1WqVVMlx0zv/l61E+UH2BiAAA=",
+    "width": 960,
+    "height": 540,
+    "objectPosition": "center center",
+    "fit": "contain"
   },
   {
-    "src": "/images/hero/advocate-outdoor-portrait.webp",
-    "alt": "Advocate K. Neelamegam — trusted High Court lawyer in Madurai",
-    "blurDataURL": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACwBACdASoMABQAPu1iqU2ppaOiMAgBMB2JbACdMoFWVtYAN1bbdXofTiXu/eewAP5VtWD1frcOddq+4VVsIW1XmaAThG+ZFayTs1rBmwY8F6htC3ItxSCpurcLVStMfhHbJr3gAgxB6fGX1nSCLe4zcCNnwXXX5HpNzaYtPQ+jrjphgC7UyrdVQsLaXn5mhR/LuYSbH0LvgAAA",
-    "width": 271,
-    "height": 458,
-    "objectPosition": "center 20%",
-    "fit": "cover"
+    "src": "/images/hero/lumbini-banner-ceremonial.webp",
+    "alt": "Advocate K. Nelamegam — experienced dedicated trusted legal advocate banner",
+    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoMAAcAA4BaJZQCsAEUn5lUw6MAAP70lT5L6LBDU9rvPbhKmNB1vXP1wvB5T3jfPE7HjPk+gAA=",
+    "width": 960,
+    "height": 540,
+    "objectPosition": "center center",
+    "fit": "contain"
   }
 ] as const satisfies readonly HeroCarouselSlide[];

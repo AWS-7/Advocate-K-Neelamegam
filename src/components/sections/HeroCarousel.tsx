@@ -33,7 +33,7 @@ export function HeroCarousel() {
             {heroCarouselSlides.map((slide, index) => (
               <div
                 key={slide.src}
-                className="relative aspect-[3/4] min-w-0 flex-[0_0_100%] lg:max-h-[500px]"
+                className="relative aspect-[16/10] max-h-[200px] min-w-0 flex-[0_0_100%] sm:max-h-[240px] lg:aspect-[3/4] lg:max-h-[500px]"
               >
                 <Image
                   src={slide.src}
@@ -43,7 +43,12 @@ export function HeroCarousel() {
                   priority={index === 0}
                   placeholder="blur"
                   blurDataURL={slide.blurDataURL}
-                  className="h-full w-full object-cover"
+                  className={cn(
+                    "h-full w-full",
+                    slide.fit === "contain"
+                      ? "object-contain bg-[#081829] p-1 sm:p-1.5"
+                      : "object-cover",
+                  )}
                   style={{ objectPosition: slide.objectPosition }}
                   sizes="(max-width: 1024px) 100vw, 420px"
                   quality={80}
