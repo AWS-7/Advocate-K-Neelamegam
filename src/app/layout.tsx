@@ -41,20 +41,6 @@ export default function RootLayout({
   return (
     <html lang="en-IN" className={`${playfair.variable} ${inter.variable}`}>
       <head>
-        <link
-          rel="preload"
-          href="/images/hero-bg-mobile.webp"
-          as="image"
-          type="image/webp"
-          media="(max-width: 1023px)"
-        />
-        <link
-          rel="preload"
-          href="/images/hero-bg-desktop.webp"
-          as="image"
-          type="image/webp"
-          media="(min-width: 1024px)"
-        />
         <meta
           name="google-site-verification"
           content={GOOGLE_SITE_VERIFICATION}
