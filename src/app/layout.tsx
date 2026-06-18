@@ -5,6 +5,8 @@ import { Preloader } from "@/components/layout/Preloader";
 import { SecurityShell } from "@/components/security/SecurityShell";
 import { ErrorBoundary } from "@/components/security/ErrorBoundary";
 import { buildSiteMetadata, GOOGLE_SITE_VERIFICATION } from "@/lib/seo";
+import { advocatePortraitImage } from "@/lib/seo-images";
+import { SITE_URL } from "@/lib/site-data";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -56,6 +58,10 @@ export default function RootLayout({
         <meta
           name="google-site-verification"
           content={GOOGLE_SITE_VERIFICATION}
+        />
+        <link
+          rel="image_src"
+          href={`${SITE_URL}${advocatePortraitImage.path}`}
         />
       </head>
       <body className="antialiased">

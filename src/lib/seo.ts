@@ -1,11 +1,27 @@
 import type { Metadata } from "next";
 import { SITE_URL, primarySeoKeywords, siteConfig } from "@/lib/site-data";
-
-const ogImage = "/images/og-image.svg";
+import { advocatePortraitImage, ogShareImage } from "@/lib/seo-images";
 
 export const GOOGLE_SITE_VERIFICATION =
   process.env.GOOGLE_SITE_VERIFICATION ??
   "udFtVtTxsqvryhu6jqpX5jeO-hWhthuaWx5qE798yhk";
+
+const sharedOpenGraphImages: NonNullable<Metadata["openGraph"]>["images"] = [
+  {
+    url: ogShareImage.path,
+    width: ogShareImage.width,
+    height: ogShareImage.height,
+    alt: ogShareImage.alt,
+    type: "image/webp",
+  },
+  {
+    url: advocatePortraitImage.path,
+    width: advocatePortraitImage.width,
+    height: advocatePortraitImage.height,
+    alt: advocatePortraitImage.alt,
+    type: "image/webp",
+  },
+];
 
 export function buildSiteMetadata(): Metadata {
   return {
@@ -44,20 +60,13 @@ export function buildSiteMetadata(): Metadata {
       siteName: siteConfig.name,
       title: siteConfig.seo.title,
       description: siteConfig.seo.description,
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: `${siteConfig.advocateName} — High Court Lawyer India`,
-        },
-      ],
+      images: sharedOpenGraphImages,
     },
     twitter: {
       card: "summary_large_image",
       title: siteConfig.seo.title,
       description: siteConfig.seo.description,
-      images: [ogImage],
+      images: [ogShareImage.path, advocatePortraitImage.path],
     },
     other: {
       "geo.region": "IN-TN",
@@ -90,4 +99,46 @@ export const homePageMetadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
+  openGraph: {
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+    url: SITE_URL,
+    images: sharedOpenGraphImages,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+    images: [ogShareImage.path, advocatePortraitImage.path],
+  },
 };
+
+export function buildPageShareMetadata({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: string;
+}): Metadata {
+  const url = `${SITE_URL}${path}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      images: sharedOpenGraphImages,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogShareImage.path, advocatePortraitImage.path],
+    },
+  };
+}

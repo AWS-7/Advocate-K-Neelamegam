@@ -20,6 +20,31 @@ const nextConfig: NextConfig = {
         destination: "https://lumbinilawassociates.in/:path*",
         permanent: true,
       },
+      {
+        source: "/images/hero/advocate-court-attire-portrait.webp",
+        destination: "/images/advocate-k-neelamegam-high-court-portrait.webp",
+        permanent: true,
+      },
+      {
+        source: "/images/hero/advocate-ceremonial-portrait.webp",
+        destination: "/images/advocate-k-neelamegam-high-court-portrait.webp",
+        permanent: true,
+      },
+      {
+        source: "/images/hero/advocate-outdoor-portrait.webp",
+        destination: "/images/advocate-k-neelamegam-high-court-portrait.webp",
+        permanent: true,
+      },
+      {
+        source: "/images/gallery/advocate-court-attire-portrait.webp",
+        destination: "/images/advocate-k-neelamegam-high-court-portrait.webp",
+        permanent: true,
+      },
+      {
+        source: "/images/og-image.svg",
+        destination: "/images/og-image.webp",
+        permanent: true,
+      },
     ];
   },
   async headers() {

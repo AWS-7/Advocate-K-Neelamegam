@@ -11,27 +11,27 @@ export type HeroCarouselSlide = {
 
 export const heroCarouselSlides = [
   {
-    "src": "/images/hero/lumbini-banner-dark.webp",
-    "alt": "Lumbini Law Associates — Advocate K. Nelamegam professional law firm banner",
-    "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoMAAcAA4BaJZwC7AERH46ngAD+2smLymJdpgCA+yT05feMjs0MwEpAAAA=",
+    "src": "/images/hero/lumbini-mobile-banner-court-attire.webp",
+    "alt": "Lumbini Law Associates — Advocate K. Neelamegam High Court advocate banner",
+    "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACQAQCdASoMAAcAA4BaJZwAAsfycmAA/ulR2+qSNhT2VZug/HR3siLds7YJM9BT/AA=",
     "width": 960,
     "height": 540,
     "objectPosition": "center center",
     "fit": "contain"
   },
   {
-    "src": "/images/hero/lumbini-banner-blue.webp",
-    "alt": "Advocate K. Nelamegam — Lumbini Law Associates Madurai legal services banner",
-    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoMAAcAA4BaJZQCdADcUMIphYAA/qNME593r7CNrxsPheAIYQw/P4XWoo3GYs5KhB1WqVVMlx0zv/l61E+UH2BiAAA=",
+    "src": "/images/hero/lumbini-mobile-banner-blue-blazer.webp",
+    "alt": "Advocate K. Neelamegam — Lumbini Law Associates Madurai legal services banner",
+    "blurDataURL": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoMAAcAA4BaJZQCdADx9UAAAP7lMQTzV39trx9ozxL9btiCmHdUV+qJ/izy7DPKzUAAAA==",
     "width": 960,
     "height": 540,
     "objectPosition": "center center",
     "fit": "contain"
   },
   {
-    "src": "/images/hero/lumbini-banner-ceremonial.webp",
-    "alt": "Advocate K. Nelamegam — experienced dedicated trusted legal advocate banner",
-    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoMAAcAA4BaJZQCsAEUn5lUw6MAAP70lT5L6LBDU9rvPbhKmNB1vXP1wvB5T3jfPE7HjPk+gAA=",
+    "src": "/images/hero/lumbini-mobile-banner-ceremonial.webp",
+    "alt": "Advocate K. Neelamegam — experienced dedicated trusted legal advocate banner",
+    "blurDataURL": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoMAAcAA4BaJZQCw7EURwlQwAD+9YNkFLl8sPei/Zqpy6TblBkuvwqhWehyCTIAAAA=",
     "width": 960,
     "height": 540,
     "objectPosition": "center center",

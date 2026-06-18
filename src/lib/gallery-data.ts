@@ -9,8 +9,8 @@ export type GalleryImage = {
 
 export const galleryImages = [
   {
-    "src": "/images/gallery/advocate-court-attire-portrait.webp",
-    "alt": "Advocate K. Neelamegam in High Court legal attire with advocate's bands",
+    "src": "/images/advocate-k-neelamegam-high-court-portrait.webp",
+    "alt": "Advocate K. Neelamegam — Lumbini Law Associates, High Court Advocate Madurai",
     "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAQCdASoMAA8AA4BaJQBOgB9xng09DUAA/uKNIG3mJUwDC1/WUXqw221Jr+v64dEfdA8MRlWI8Iv1z/xOxZbeJ04J1tC1OEuKiW/pPLQ2+iOmguJrznBj1z8dS9ZqGjYEqoAA",
     "width": 349,
     "height": 449

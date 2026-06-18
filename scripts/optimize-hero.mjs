@@ -14,23 +14,23 @@ const BLUR_SIZE = 12;
 
 const mobileHeroSources = [
   {
-    file: "ChatGPT Image Jun 18, 2026, 08_13_01 AM.png",
-    slug: "lumbini-banner-dark",
-    alt: "Lumbini Law Associates — Advocate K. Nelamegam professional law firm banner",
+    file: "ChatGPT Image Jun 18, 2026, 10_23_20 AM.png",
+    slug: "lumbini-mobile-banner-court-attire",
+    alt: "Lumbini Law Associates — Advocate K. Neelamegam High Court advocate banner",
     objectPosition: "center center",
     fit: "contain",
   },
   {
-    file: "ChatGPT Image Jun 18, 2026, 08_15_08 AM.png",
-    slug: "lumbini-banner-blue",
-    alt: "Advocate K. Nelamegam — Lumbini Law Associates Madurai legal services banner",
+    file: "ChatGPT Image Jun 18, 2026, 10_23_38 AM.png",
+    slug: "lumbini-mobile-banner-blue-blazer",
+    alt: "Advocate K. Neelamegam — Lumbini Law Associates Madurai legal services banner",
     objectPosition: "center center",
     fit: "contain",
   },
   {
-    file: "ChatGPT Image Jun 18, 2026, 08_17_54 AM.png",
-    slug: "lumbini-banner-ceremonial",
-    alt: "Advocate K. Nelamegam — experienced dedicated trusted legal advocate banner",
+    file: "ChatGPT Image Jun 18, 2026, 10_23_52 AM.png",
+    slug: "lumbini-mobile-banner-ceremonial",
+    alt: "Advocate K. Neelamegam — experienced dedicated trusted legal advocate banner",
     objectPosition: "center center",
     fit: "contain",
   },

@@ -5,9 +5,12 @@ import {
   siteConfig,
   testimonials,
 } from "@/lib/site-data";
+import { advocatePortraitImage, ogShareImage } from "@/lib/seo-images";
 import { seoKeywords } from "@/lib/seo-keywords";
 
-const heroPortrait = `${SITE_URL}/images/gallery/advocate-court-attire-portrait.webp`;
+const heroPortrait = `${SITE_URL}${advocatePortraitImage.path}`;
+const ogImage = `${SITE_URL}${ogShareImage.path}`;
+const portraitImageId = `${SITE_URL}/#advocate-portrait`;
 
 const businessId = `${SITE_URL}/#business`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -49,7 +52,7 @@ export function SeoJsonLd() {
         ],
         url: SITE_URL,
         logo: `${SITE_URL}/images/logo.svg`,
-        image: [heroPortrait, `${SITE_URL}/images/og-image.svg`],
+        image: [heroPortrait, ogImage],
         description: siteConfig.seo.description,
         telephone: siteConfig.phone,
         email: siteConfig.email,
@@ -146,7 +149,7 @@ export function SeoJsonLd() {
         url: SITE_URL,
         telephone: siteConfig.phone,
         email: siteConfig.email,
-        image: heroPortrait,
+        image: { "@id": portraitImageId },
         priceRange: "₹₹",
         address: {
           "@type": "PostalAddress",
@@ -186,6 +189,18 @@ export function SeoJsonLd() {
         legalName: siteConfig.name,
       },
       {
+        "@type": "ImageObject",
+        "@id": portraitImageId,
+        url: heroPortrait,
+        contentUrl: heroPortrait,
+        name: advocatePortraitImage.alt,
+        caption: advocatePortraitImage.alt,
+        width: advocatePortraitImage.width,
+        height: advocatePortraitImage.height,
+        representativeOfPage: true,
+        inLanguage: "en-IN",
+      },
+      {
         "@type": "Attorney",
         "@id": attorneyId,
         name: siteConfig.advocateName,
@@ -193,7 +208,7 @@ export function SeoJsonLd() {
         description:
           "Experienced High Court advocate specializing in criminal defense, civil litigation, family law, property disputes, NI Act cases, and constitutional matters across Tamil Nadu and India.",
         url: SITE_URL,
-        image: heroPortrait,
+        image: { "@id": portraitImageId },
         telephone: siteConfig.phone,
         email: siteConfig.email,
         worksFor: { "@id": businessId },

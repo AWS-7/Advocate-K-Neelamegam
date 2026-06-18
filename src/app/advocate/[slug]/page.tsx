@@ -6,7 +6,7 @@ import {
   advocateLandingPages,
   getAdvocateLandingPage,
 } from "@/lib/seo-landing-pages";
-import { SITE_URL } from "@/lib/site-data";
+import { buildPageShareMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -19,16 +19,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = getAdvocateLandingPage(slug);
   if (!page) return { title: "Page Not Found" };
 
-  return {
+  return buildPageShareMetadata({
     title: page.title,
     description: page.description,
-    alternates: { canonical: `${SITE_URL}/advocate/${page.slug}` },
-    openGraph: {
-      title: page.title,
-      description: page.description,
-      url: `${SITE_URL}/advocate/${page.slug}`,
-    },
-  };
+    path: `/advocate/${page.slug}`,
+  });
 }
 
 export default async function AdvocateLandingRoute({ params }: Props) {

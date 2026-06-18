@@ -3,10 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Award, CheckCircle2, Scale, Shield } from "lucide-react";
+import { advocatePortraitImage } from "@/lib/seo-images";
 import { galleryImages } from "@/lib/gallery-data";
 import { infoCards, siteConfig, whyChooseUs } from "@/lib/site-data";
 
 const aboutPortrait =
+  galleryImages.find((image) => image.src === advocatePortraitImage.path) ??
+  galleryImages.find((image) => image.src.includes("advocate-k-neelamegam")) ??
   galleryImages.find((image) => image.src.includes("advocate-court-attire-portrait")) ??
   galleryImages[0];
 

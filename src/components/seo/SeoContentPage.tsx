@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, MessageCircle, MapPin } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
+import { advocatePortraitImage } from "@/lib/seo-images";
 import { practiceAreas, siteConfig, getWhatsAppUrl } from "@/lib/site-data";
 
 type SeoContentPageProps = {
@@ -34,7 +36,22 @@ export function SeoContentPage({
           </nav>
 
           <h1 className="font-heading text-3xl font-bold text-navy md:text-4xl">{h1}</h1>
-          <p className="mt-4 text-lg leading-relaxed text-muted">{intro}</p>
+
+          <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-center">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[220px] shrink-0 overflow-hidden rounded-2xl border border-navy/10 shadow-lg sm:mx-0">
+              <Image
+                src={advocatePortraitImage.path}
+                alt={advocatePortraitImage.alt}
+                width={advocatePortraitImage.width}
+                height={advocatePortraitImage.height}
+                className="h-full w-full object-cover"
+                style={{ objectPosition: "center 18%" }}
+                sizes="220px"
+                priority
+              />
+            </div>
+            <p className="text-lg leading-relaxed text-muted">{intro}</p>
+          </div>
 
           <div className="mt-8 space-y-4 text-base leading-relaxed text-muted">
             <p>

@@ -14,8 +14,9 @@ const BLUR_SIZE = 12;
 const gallerySources = [
   {
     file: "Screenshot 2026-06-17 182944.png",
-    slug: "advocate-court-attire-portrait",
-    alt: "Advocate K. Neelamegam in High Court legal attire with advocate's bands",
+    slug: "advocate-k-neelamegam-high-court-portrait",
+    alt: "Advocate K. Neelamegam — Lumbini Law Associates, High Court Advocate Madurai",
+    rootImage: true,
   },
   {
     file: "Screenshot 2026-06-17 182926.png",
@@ -113,7 +114,8 @@ async function main() {
       continue;
     }
 
-    const outputPath = path.join(outDir, `${item.slug}.webp`);
+    const outputDir = item.rootImage ? path.join(root, "public", "images") : outDir;
+    const outputPath = path.join(outputDir, `${item.slug}.webp`);
     const meta = await sharp(inputPath).metadata();
 
     await sharp(inputPath)
@@ -126,7 +128,7 @@ async function main() {
     const blurDataURL = await createBlurDataUrl(inputPath);
 
     entries.push({
-      src: `/images/gallery/${item.slug}.webp`,
+      src: item.rootImage ? `/images/${item.slug}.webp` : `/images/gallery/${item.slug}.webp`,
       alt: item.alt,
       blurDataURL,
       width: Math.min(meta.width ?? GALLERY_MAX_WIDTH, GALLERY_MAX_WIDTH),
