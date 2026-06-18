@@ -10,6 +10,7 @@
     "optimize:gallery": "node scripts/optimize-gallery.mjs",
     "optimize:hero": "node scripts/optimize-hero.mjs",
     "optimize:bg": "node scripts/optimize-bg.mjs",
+    "optimize:icons": "node scripts/optimize-icons.mjs",
     "gsc:check": "node scripts/gsc-preflight.mjs",
     "gsc:health": "node scripts/gsc-health-check.mjs"
   },
@@ -36,6 +37,7 @@
     "eslint": "^9.32.0",
     "eslint-config-next": "^15.5.0",
     "sharp": "^0.35.1",
+    "png-to-ico": "^2.1.8",
     "tailwindcss": "^4.1.0",
     "typescript": "^5.8.3"
   }
