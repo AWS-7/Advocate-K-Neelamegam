@@ -127,6 +127,7 @@ export function AboutAdvocate() {
               src={ABOUT_IMAGE}
               alt="Legal practice at Madurai High Court"
               fill
+              loading="lazy"
               className="object-cover"
               sizes="100vw"
             />

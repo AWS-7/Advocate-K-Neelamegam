@@ -4,7 +4,12 @@ import { securityHeaders } from "./src/lib/security/headers";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  outputFileTracingRoot: path.join(__dirname),  turbopack: {
+  outputFileTracingRoot: path.join(__dirname),
+  compress: true,
+  experimental: {
+    optimizePackageImports: ["lucide-react", "framer-motion"],
+  },
+  turbopack: {
     root: path.join(__dirname),
   },
   async redirects() {
@@ -19,6 +24,15 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
       {
         source: "/(.*)",
         headers: Object.entries(securityHeaders).map(([key, value]) => ({
